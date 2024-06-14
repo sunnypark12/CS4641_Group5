@@ -32,8 +32,8 @@ Despite significant advances in medical technology, accurately predicting heart 
 ## Results/Discussion
 
 1. **Validation Metrics:** Recall, Precision, F1-score, Conditional Entropy, Mutual Information.
-2. **Project Goal:** Create an ML model that accurately predicts the risk of heart disease, utilizing various datasets and algorithms to provide reliable insights for healthcare providers.
-3. **Expected Results:** There exists a correlation between the risk of heart failure and external factors such as lifestyle, sleep, and genetics.
+2. **Project Goal:** Create an ML model that more accurately predicts the risk of heart disease, utilizing various datasets and algorithms to provide reliable insights for healthcare providers.
+3. **Expected Results:** There exists a correlation between the risk of heart failure and external factors such as lifestyle, sleep, and genetics, with changes in these factors influencing said risk.
 
 ## References
 
