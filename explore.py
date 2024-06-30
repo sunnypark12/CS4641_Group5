@@ -19,14 +19,14 @@ clinical_records.info()
 heart.info()
 
 # Calculate the percentage of missing values for each column
-missing_percentage1 = (heart_2020_df.isnull().sum() / len(heart_2020_df)) * 100
-missing_percentage2 = (clinical_records.isnull().sum() / len(heart_2020_df)) * 100
-missing_percentage3 = (heart.isnull().sum() / len(heart_2020_df)) * 100
+# missing_percentage1 = (heart_2020_df.isnull().sum() / len(heart_2020_df)) * 100
+# missing_percentage2 = (clinical_records.isnull().sum() / len(heart_2020_df)) * 100
+# missing_percentage3 = (heart.isnull().sum() / len(heart_2020_df)) * 100
 
-# Display the result
-print(missing_percentage1) # 0.0 -> no missing data
-print(missing_percentage2) # 0.0
-print(missing_percentage3) # 0.0
+# # Display the result
+# print(missing_percentage1) # 0.0 -> no missing data
+# print(missing_percentage2) # 0.0
+# print(missing_percentage3) # 0.0
 
 
 # Display the first few rows of the dataset
