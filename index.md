@@ -27,7 +27,8 @@ Our group decided to utilize the first dataset we found from Kaggle, the **Heart
 
 ### Cleaning Code
 
-```python
+```
+python
 import pandas as pd
 
 # Load the dataset
@@ -44,7 +45,14 @@ cleaned_df.to_csv(cleaned_file_path, index=False)
 # Display the first few rows of the cleaned dataframe
 print(cleaned_df.head())
 
-print("Cleaned dataset saved to:", cleaned_file_path)```
+print("Cleaned dataset saved to:", cleaned_file_path)
+```
+Below are the comparison images between the dataset before and after cleaning:
+**Before Cleaning**
+
+**After Cleaning**
+
+As illustrated, the data cleaning process significantly improved the dataset quality, making it more suitable for subsequent analysis and modeling.
 
 ## Methods
 
