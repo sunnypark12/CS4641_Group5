@@ -92,7 +92,7 @@ a:hover {
 table {
     width: 80%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
     background: #010057; /* Dark blue variant */
     border-radius: 8px;
     overflow: hidden;
@@ -153,7 +153,7 @@ ul, ol {
 }
 
 li {
-    margin-bottom: 0.3rem; /* Reduced space between list items */
+    margin-bottom: 0rem; /* Reduced space between list items */
 }
 
 .container {
