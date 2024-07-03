@@ -1,37 +1,37 @@
 /* Reset some default browser styles */
 * {
-    margin: 20px;
-    padding: 3px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 1rem;
-    background: #010048; /* Dark blue background */
-    color: #ffffff; /* White text */
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.125rem;
+    color: #ffffff;
+    background-color: #010048; /* Dark blue background */
     line-height: 1.6;
 }
 
 header {
     background: #02006c; /* Dark blue variant */
     color: #fff;
-    padding: 3rem 0;
+    padding: 1rem 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    margin: 2;
-    font-size: 2.5rem;
+    margin: 0;
+    font-size: 3.125rem;
+    font-weight: 800;
 }
 
 nav {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    padding: 3rem 0;
+    padding: 1rem 0;
 }
 
 nav a {
@@ -46,18 +46,36 @@ nav a:hover {
 }
 
 main {
-    padding: 2rem; /* Increased padding for more space around text */
-    max-width: 900px;
+    padding: 4rem 6rem; /* Increased padding for more space around text */
+    max-width: 1000px;
     margin: 2rem auto;
     background: #03002e; /* Dark blue variant */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left;
 }
 
-h2, h3, h4 {
-    color: #ddd;
-    margin-top: 3rem;
+h1, h2, h3, h4 {
+    margin-top: 1.25rem;
+    margin-bottom: .5rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
 }
 
 a {
@@ -72,7 +90,7 @@ a:hover {
 }
 
 table {
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
     background: #010057; /* Dark blue variant */
@@ -86,7 +104,7 @@ table, th, td {
 }
 
 th, td {
-    padding: 3rem;
+    padding: 1rem;
     text-align: left;
 }
 
@@ -98,7 +116,7 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 3rem auto;
+    margin: 2rem auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -129,5 +147,5 @@ blockquote {
 
 /* Add padding to left and right */
 .container {
-    padding: 5 5rem;
+    padding: 0 2rem;
 }
