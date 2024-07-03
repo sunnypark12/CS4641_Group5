@@ -3,9 +3,8 @@ from sklearn.model_selection import train_test_split, cross_val_score, Stratifie
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, roc_auc_score, accuracy_score
-from sklearn.tree import export_graphviz
-import pydotplus
-from IPython.display import Image
+import numpy as np
+import matplotlib.pyplot as plt
 
 # Load the dataset
 file_path = './Data/heart.csv'
@@ -14,38 +13,76 @@ df = pd.read_csv(file_path)
 # Convert string data to appropriate type; object -> string
 string_col = df.select_dtypes(include="object").columns
 df[string_col] = df[string_col].astype("string")
+print(df.dtypes)  # check if converted properly
+
+df[string_col].head()
+for col in string_col:
+    print(f"The distribution of categorical values in the {col} is : ")
+    print(df[col].value_counts())
+
+# Label encoding of categorical variables (this is fine for random forest)
+# Initialize a dictionary to store label encoders
+label_encoders = {}
 
 # Label encoding of categorical variables
-label_encoders = {}
 for col in string_col:
-    le = LabelEncoder()
+    le = LabelEncoder()  # initialize label encoder
     df[col] = le.fit_transform(df[col])
+    # fit: During the fitting process, LabelEncoder learns the unique classes present in the data and assigns each class a unique integer.
+    # transform: After learning the classes, it then transforms the original categorical values into their corresponding integer codes.
     label_encoders[col] = le
+
+# Print the label encoding mapping for each categorical feature
+for col in string_col:
+    le = label_encoders[col]
+    print(f"Label encoding for {col}:")
+    for class_, label in zip(le.classes_, le.transform(le.classes_)):
+        print(f"{class_} -> {label}")
+    print()
 
 # Split the data into features and target
 X = df.drop('HeartDisease', axis=1)
 y = df['HeartDisease']
 
-# Scale numerical features (optional but recommended)
+# Scale numerical features
 scaler = StandardScaler()
-numerical_cols = X.select_dtypes(include=["float64", "int64"]).columns
-X[numerical_cols] = scaler.fit_transform(X[numerical_cols])
+X = scaler.fit_transform(X)
 
-# Convert X back to DataFrame to retain column names
-X = pd.DataFrame(X, columns=df.drop('HeartDisease', axis=1).columns)
-
-# Define the Random Forest model
-rf_model = RandomForestClassifier(n_estimators=152, random_state=90)
+rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
 
 # Define the stratified k-fold cross-validation procedure
 kf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-
 # Perform cross-validation
 cv_scores = cross_val_score(rf_model, X, y, cv=kf, scoring='roc_auc')
-
 # Print cross-validation results
 print(f"Cross-Validation ROC-AUC Scores: {cv_scores}")
 print(f"Mean ROC-AUC Score: {cv_scores.mean()}")
+
+n_estimators_range = range(1, 201, 10)  # Define a range of n_estimators
+# List to store accuracy for each value of n_estimators
+accuracy_scores = []
+# Loop over the n_estimators_range
+for n in n_estimators_range:
+    # Define the Random Forest model
+    rf_model = RandomForestClassifier(n_estimators=n, random_state=90)
+    
+    # Perform cross-validation and calculate accuracy
+    cv_scores = cross_val_score(rf_model, X, y, cv=kf, scoring='accuracy')
+    
+    # Append the mean accuracy to the list
+    accuracy_scores.append(np.mean(cv_scores))
+
+# Plot the results
+plt.figure(figsize=(10, 6))
+plt.plot(n_estimators_range, accuracy_scores, marker='o')
+plt.xlabel('Number of Trees (n_estimators)')
+plt.ylabel('Mean Accuracy')
+plt.title('Random Forest Model Accuracy vs. Number of Trees')
+plt.grid(True)
+plt.show()
+
+# Define the Random Forest model
+rf_model = RandomForestClassifier(n_estimators=152, random_state=90) 
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -65,7 +102,16 @@ print("ROC-AUC Score:", roc_auc_score(y_test, y_proba))
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Model Accuracy: {accuracy * 100:.2f}%")
 
-# Example prediction on new data
+# Plot feature importance
+feature_importances = rf_model.feature_importances_
+features = df.drop('HeartDisease', axis=1).columns
+
+plt.figure(figsize=(12, 8))
+plt.barh(features, feature_importances, color='skyblue')
+plt.xlabel('Feature Importance')
+plt.title('Feature Importance in Random Forest Model')
+plt.show()
+
 new_data = pd.DataFrame({
     'Age': [45],
     'Sex': ['Male'],
