@@ -45,9 +45,9 @@ nav a:hover {
 }
 
 main {
-    padding: 10rem;
+    padding: 50rem;
     max-width: 1000px;
-    margin: 5rem auto;
+    margin: 20rem auto;
     background: #03002e; /* Dark blue variant */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -85,7 +85,7 @@ table, th, td {
 }
 
 th, td {
-    padding: 1rem;
+    padding: 3rem;
     text-align: left;
 }
 
