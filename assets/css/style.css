@@ -63,19 +63,19 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 2.25rem;
+    font-size: 2.rem;
 }
 
 h2 {
-    font-size: 2rem;
-}
-
-h3 {
     font-size: 1.75rem;
 }
 
-h4 {
+h3 {
     font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
 }
 
 a {
@@ -90,13 +90,14 @@ a:hover {
 }
 
 table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
     margin: 1.5rem 0;
     background: #010057; /* Dark blue variant */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align: center;
 }
 
 table, th, td {
@@ -114,7 +115,7 @@ th {
 
 img {
     display: block;
-    max-width: 80%;
+    max-width: 78%;
     height: auto;
     margin: 2rem auto;
     border-radius: 8px;
@@ -152,7 +153,7 @@ ul, ol {
 }
 
 li {
-    margin-bottom: 0.5rem; /* Reduced space between list items */
+    margin-bottom: 0.3rem; /* Reduced space between list items */
 }
 
 .container {
