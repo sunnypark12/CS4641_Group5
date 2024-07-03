@@ -12,7 +12,7 @@ According to the CDC [1], heart failure is the leading cause of death in the wor
 3. **[Indicators of Heart Disease](https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease) by KAMIL PYTLAK:**
    - Features: Data collected from CDC, including all the major risk factors for heart failure
 <br>
-  
+<br>
 ## Problem/Motivation
 
 Despite significant advances in medical technology, accurately predicting heart failure remains a challenging task. Many existing models are not generalizable across different patient populations and often fail to provide actionable insights for healthcare providers. The complexity and variability of human physiology necessitate more sophisticated predictive models that can handle diverse and high-dimensional data. For instance, several research papers like [4] have identified various factors, including environmental, genetic, and lifestyle factors, that are correlated with heart failure risk, underscoring the need for improved predictive models that effectively capture and embody the relationships among them. Such models are crucial for identifying high-risk patients earlier and more accurately in a wider range of scope, enhancing treatment plans and reducing mortality rates. Leveraging machine learning models can provide robust, reliable predictions in clinical settings.
@@ -46,7 +46,7 @@ As illustrated, the data cleaning process significantly improved the dataset qua
    - **Fill in missing data (pandas)** COMPLETED
    - **Extracting Important Feaetures (pandas):** to ensure data integration.
 <br>
-
+<br>
 ## 1st Supervised Method: Random Forest Model ##
 
 In our study, we utilized the Random Forest classifier to predict heart failure based on the cleaned dataset.
@@ -59,7 +59,6 @@ In our study, we utilized the Random Forest classifier to predict heart failure 
 3. Scaling Features: Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
 ![ScaleData](GitHub_Pages/Images/ScaleData.png)
 <br>
-
 **Model Training and Evaluation**
 
 We used Stratified K-Fold cross-validation to estimate the performance of our model. 
@@ -112,7 +111,7 @@ We also visualized the relationship between the number of trees in the Random Fo
 1. **Validation Metrics:** Recall, Precision, F1-score, Conditional Entropy, Mutual Information.
 2. **Project Goal:** Create an ML model that more accurately predicts the risk of heart disease, utilizing various datasets and algorithms to provide reliable insights for healthcare providers.
 3. **Expected Results:** There exists a correlation between the risk of heart failure and external factors such as lifestyle, sleep, and genetics, with changes in these factors influencing said risk.
-
+<br>
 
 ## References
 
