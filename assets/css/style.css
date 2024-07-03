@@ -1,6 +1,6 @@
 /* Reset some default browser styles */
 * {
-    margin: 30px;
+    margin: 40px;
     padding: 0;
     box-sizing: border-box;
 }
