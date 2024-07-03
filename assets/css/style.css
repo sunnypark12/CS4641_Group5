@@ -46,7 +46,7 @@ nav a:hover {
 }
 
 main {
-    padding: 4rem 6rem; /* Adjust padding for more space around text */
+    padding: 4rem 2rem; /* Adjust padding for more space around text */
     max-width: 1000px;
     margin: 2rem auto;
     background: #03002e; /* Dark blue variant */
