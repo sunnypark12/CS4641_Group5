@@ -1,7 +1,5 @@
 /* Reset some default browser styles */
 * {
-    margin: 20px;
-    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -11,6 +9,8 @@ body {
     color: #ffffff;
     background-color: #010048; /* Dark blue background */
     line-height: 1.6;
+    margin: 0; /* Ensure there's no margin around the body */
+    padding: 0; /* Ensure there's no padding around the body */
 }
 
 header {
@@ -46,7 +46,7 @@ nav a:hover {
 }
 
 main {
-    padding: 4rem 6rem; /* Increased padding for more space around text */
+    padding: 4rem 2rem; /* Adjust padding for more space around text */
     max-width: 1000px;
     margin: 2rem auto;
     background: #03002e; /* Dark blue variant */
@@ -148,4 +148,6 @@ blockquote {
 /* Add padding to left and right */
 .container {
     padding: 0 2rem;
+    max-width: 1000px;
+    margin: 0 auto; /* Center the container */
 }
