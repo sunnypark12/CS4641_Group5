@@ -40,10 +40,10 @@ As illustrated, the data cleaning process significantly improved the dataset qua
    - **Neural Networks (pytorch)** for handling high-dimensional data with deep learning techniques for flexibility and accuracy.
 2. **Data Preprocessing:**
    - **Dimensionality Reduction with PCA** to simplify data and remove redundant features and improve model performance.
-   - **Fill in missing data (pandas)** to ensure a complete dataset.
-   - **Joining different datasets (pandas):** to ensure data integration.
+   - **Fill in missing data (pandas)** COMPLETED
+   - **Extracting Important Feaetures (pandas):** to ensure data integration.
 
-## First Supervised Method: Random Forest Model ##
+## 1st Supervised Method: Random Forest Model ##
 
 In our study, we utilized the Random Forest classifier to predict heart failure based on the cleaned dataset.
 
@@ -68,7 +68,7 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 - In such cases, stratified k-fold cross-validation is preferred. This method ensures that the ratio of labels (e.g., 90% positive and 10% negative) remains consistent in each fold.
 - By maintaining this ratio, stratified k-fold cross-validation provides more reliable and consistent evaluation metrics across all folds, regardless of the metric chosen.
 
-   OUTPUT
+   **OUTPUT**
   
    Cross-Validation ROC-AUC Scores: [0.93936966 0.93418202 0.92759119 0.93625858 0.90790899]
   
