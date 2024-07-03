@@ -82,8 +82,7 @@ In our study, we utilized the Random Forest classifier to predict heart failure 
 
 2. Handling Categorical Variables: We used label encoding for categorical variables, as it is suitable for tree-based algorithms like Random Forest.
 
-```
-# Label Encoding of Categorical Variables
+```# Label Encoding of Categorical Variables
 # Initialize a dictionary to store label encoders
 label_encoders = {}
 for col in string_col:
@@ -95,11 +94,10 @@ for col in string_col:
 ```
 
 3. Scaling Features: Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
-```
-# Split the data into features and target
+
+```# Split the data into features and target
 X = df.drop('HeartDisease', axis=1)
 y = df['HeartDisease']
-
 # Scale numerical features 
 scaler = StandardScaler()
 X = scaler.fit_transform(X)
