@@ -8,7 +8,7 @@ def pca(csv_file: str, n_components: int):
     # Load dataset
     data = pd.read_csv(csv_file)
     
-    # Handle non-numeric data
+    # Handle non-numeric data using One-Hot Encoding
     data = pd.get_dummies(data)
     
     # Standardize the data
@@ -50,9 +50,8 @@ def pca(csv_file: str, n_components: int):
     return pc_df
 
 if __name__ == "__main__":
-    # Replace 'your_dataset.csv' with the path to your actual CSV file
     csv_file = 'Data/cleaned_heart.csv'
-    n_components = 8 # Replace with the number of principal components you want to keep
+    n_components = 8 # Number of principal components you want to keep
     pc_df = pca(csv_file, n_components)
     
     # Display the first few rows of the principal components DataFrame
