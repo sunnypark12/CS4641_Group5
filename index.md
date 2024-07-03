@@ -37,9 +37,9 @@ As illustrated, the data cleaning process significantly improved the dataset qua
 1. **Supervised Methods:**
    - **Random Forest Classification (sklearn):** COMPLETED
    - **KNN (scikit-learn)** for simple predictions based on similarity and visualization of the data.
-   - **Neural Networks (pytorch)** for handling high-dimensional data with deep learning techniques for flexibility and accuracy.
+   - **Neural Networks (pytorch)** for handling high-dimensional data with deep learning techniques for flexibility.
 2. **Data Preprocessing:**
-   - **Dimensionality Reduction with PCA** to simplify data and remove redundant features and improve model performance.
+   - **Dimensionality Reduction with PCA** to simplify data and remove redundant features.
    - **Fill in missing data (pandas)** COMPLETED
    - **Extracting Important Feaetures (pandas):** to ensure data integration.
 
@@ -81,7 +81,6 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 3. The prediction is done by passing in a new data for all the trees generated, and choose the majority voting.
 
 **Evaluation**
-
 The model achieved the following performance metrics:
       
    | Class | Precision | Recall | F1-score | Support |
@@ -98,14 +97,16 @@ The model achieved the following performance metrics:
 **Visualization**
 
 We also visualized the relationship between the number of trees in the Random Forest model and the model's accuracy:
-
-
+![RFAccuracy](GitHub_Pages/Images/RFAccuracy.png)
+<br>
+<br>
 
 ## Results/Discussion
 
 1. **Validation Metrics:** Recall, Precision, F1-score, Conditional Entropy, Mutual Information.
 2. **Project Goal:** Create an ML model that more accurately predicts the risk of heart disease, utilizing various datasets and algorithms to provide reliable insights for healthcare providers.
 3. **Expected Results:** There exists a correlation between the risk of heart failure and external factors such as lifestyle, sleep, and genetics, with changes in these factors influencing said risk.
+
 
 ## References
 
@@ -128,7 +129,7 @@ We also visualized the relationship between the number of trees in the Random Fo
 | Member   | Contributions                                                                               |
 |----------|---------------------------------------------------------------------------------------------|
 | Elmo     | Research and propose models, data processing methods, validation metrics.                   |
-| Stan     | Dataset research and validation on Kaggle, Gantt Chart                                      |
-| Sunny    | Dataset research and validation, problem and motivation set up                              |
+| Stan     | Data Analysis, Random Forest Code Implementation, Visualization of Quantitative Metrics     |
+| Sunny    | Data Cleaning, Random Forest Code Implementation, Github Page Design&Update                 |
 | Shayahn  | Dataset research and validation, introduction of topic for project proposal                 |
 | Joshua   | Dataset research and validation, discovering potential implementations of ML algorithms.    |
