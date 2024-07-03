@@ -154,6 +154,7 @@ ul, ol {
 
 li {
     margin-bottom: 0rem; /* Reduced space between list items */
+    line-height: 1.2; /* Reduced line height within list items */
 }
 
 .container {
