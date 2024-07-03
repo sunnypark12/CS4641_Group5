@@ -45,9 +45,9 @@ nav a:hover {
 }
 
 main {
-    padding: 100rem;
-    max-width: 800px;
-    margin: 100rem auto;
+    padding: 80rem;
+    max-width: 950px;
+    margin: 80rem auto;
     background: #03002e; /* Dark blue variant */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
