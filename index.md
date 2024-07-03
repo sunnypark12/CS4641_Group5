@@ -11,10 +11,12 @@ According to the CDC [1], heart failure is the leading cause of death in the wor
    - Features: Clinical records specific to heart failure
 3. **[Indicators of Heart Disease](https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease) by KAMIL PYTLAK:**
    - Features: Data collected from CDC, including all the major risk factors for heart failure
-
+<br>
+  
 ## Problem/Motivation
 
 Despite significant advances in medical technology, accurately predicting heart failure remains a challenging task. Many existing models are not generalizable across different patient populations and often fail to provide actionable insights for healthcare providers. The complexity and variability of human physiology necessitate more sophisticated predictive models that can handle diverse and high-dimensional data. For instance, several research papers like [4] have identified various factors, including environmental, genetic, and lifestyle factors, that are correlated with heart failure risk, underscoring the need for improved predictive models that effectively capture and embody the relationships among them. Such models are crucial for identifying high-risk patients earlier and more accurately in a wider range of scope, enhancing treatment plans and reducing mortality rates. Leveraging machine learning models can provide robust, reliable predictions in clinical settings.
+<br>
 
 ## Data Cleaning
 
@@ -32,6 +34,7 @@ Our group decided to utilize the first dataset we found from Kaggle, the _Heart 
 **After Cleaning**
 ![After_Cleaning](GitHub_Pages/Images/After_Cleaning.png)
 As illustrated, the data cleaning process significantly improved the dataset quality, making it more suitable for subsequent analysis and modeling.
+<br>
 
 ## Methods Planning on Implementation
 1. **Supervised Methods:**
@@ -42,6 +45,7 @@ As illustrated, the data cleaning process significantly improved the dataset qua
    - **Dimensionality Reduction with PCA** to simplify data and remove redundant features.
    - **Fill in missing data (pandas)** COMPLETED
    - **Extracting Important Feaetures (pandas):** to ensure data integration.
+<br>
 
 ## 1st Supervised Method: Random Forest Model ##
 
@@ -54,6 +58,7 @@ In our study, we utilized the Random Forest classifier to predict heart failure 
 
 3. Scaling Features: Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
 ![ScaleData](GitHub_Pages/Images/ScaleData.png)
+<br>
 
 **Model Training and Evaluation**
 
@@ -73,9 +78,9 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
    Cross-Validation ROC-AUC Scores: [0.93936966 0.93418202 0.92759119 0.93625858 0.90790899]
   
    Mean ROC-AUC Score: 0.929062086192368
+<br>
 
-
-## Random Forest Model
+**Random Forest Model**
 1. Build new data set from original data : randomly select the data while keeping the same number of rows with the original data set.
 2. While we don't use all the features for training the trees, we randomly select subset of features and use only them for training.
 3. The prediction is done by passing in a new data for all the trees generated, and choose the majority voting.
@@ -93,6 +98,7 @@ The model achieved the following performance metrics:
 
    **ROC-AUC Score:** 0.9568550543768942  
    **Model Accuracy:** 89.33%
+<br>
 
 **Visualization**
 
