@@ -1,16 +1,23 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 2rem;
-    background-color: #f4f4f4;
-    color: #333;
+    padding: 0;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #fff;
     line-height: 1.6;
 }
 
 header {
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    background: #0a0a0a;
     color: #fff;
-    padding: 2rem 0;
+    padding: 1rem 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -20,17 +27,36 @@ header h1 {
     font-size: 2.5rem;
 }
 
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
 main {
     padding: 2rem;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 2rem auto;
-    background: #fff;
+    background: #1a1a1a;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 h2, h3, h4 {
-    color: #444;
+    color: #ddd;
     margin-top: 1.5rem;
 }
 
@@ -49,14 +75,14 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    background: #fff;
+    background: #1a1a1a;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #444;
 }
 
 th, td {
@@ -65,7 +91,7 @@ th, td {
 }
 
 th {
-    background: #f9f9f9;
+    background: #2a2a2a;
 }
 
 img {
@@ -95,8 +121,13 @@ pre {
 blockquote {
     margin: 1.5rem 0;
     padding: 1rem;
-    background: #f9f9f9;
+    background: #2a2a2a;
     border-left: 5px solid #007bff;
     font-style: italic;
-    color: #555;
+    color: #bbb;
+}
+
+/* Add padding to left and right */
+.container {
+    padding: 0 2rem;
 }
