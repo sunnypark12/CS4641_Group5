@@ -1,7 +1,7 @@
 /* Reset some default browser styles */
 * {
-    margin: 40;
-    padding: 40;
+    margin: 80;
+    padding: 80;
     box-sizing: border-box;
 }
 
