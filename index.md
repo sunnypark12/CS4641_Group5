@@ -45,7 +45,7 @@ As illustrated, the data cleaning process significantly improved the dataset qua
 2. **Data Preprocessing:**
    - **Dimensionality Reduction with PCA** to simplify data and remove redundant features.
    - **Fill in missing data (pandas)** COMPLETED
-   - **Extracting Important Feaetures (pandas):** to ensure data integration.
+   - **Extracting Important Features (pandas):** to ensure data integration.
 <br>
 <br>
 
