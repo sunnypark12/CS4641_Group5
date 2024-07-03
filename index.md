@@ -47,7 +47,6 @@ print(cleaned_df.head())
 
 print("Cleaned dataset saved to:", cleaned_file_path)
 ```
-
 Below are the comparison images between the dataset before and after cleaning:
 
 **Before Cleaning**
@@ -65,8 +64,7 @@ As illustrated, the data cleaning process significantly improved the dataset qua
       - For simple predictions based on similarity and visualization of the data.
    - **Neural Networks (pytorch):**
       - For handling high-dimensional data with deep learning techniques. NN usually has the highest flexibility and thus can result in the best result for our model.
-
-3. **Data Preprocessing:**
+2. **Data Preprocessing:**
    - **Dimensionality Reduction with PCA:**
       - To simplify data and remove redundant features and improve model performance.
    - **Fill in missing data (pandas):**
@@ -111,7 +109,6 @@ X = scaler.fit_transform(X)
 
 **Model Training and Evaluation**
 We used Stratified K-Fold cross-validation to estimate the performance of our model. 
-
 1. K-fold cross-validation :
 - We divide the samples and the associated targets into 𝑘 distinct sets, ensuring that each set is exclusive of the others. This process is known as k-fold cross-validation.
 - Using KFold from scikit-learn, we can split any dataset into 𝑘 equal parts. Each sample is assigned a value from 0 to 𝑘 − 1, ensuring that each subset is used for both training and validation in different iterations.
@@ -122,9 +119,7 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 - By maintaining this ratio, stratified k-fold cross-validation provides more reliable and consistent evaluation metrics across all folds, regardless of the metric chosen.
 
    OUTPUT: 
-   
    Cross-Validation ROC-AUC Scores: [0.93936966 0.93418202 0.92759119 0.93625858 0.90790899]
-   
    Mean ROC-AUC Score: 0.929062086192368
 
 
