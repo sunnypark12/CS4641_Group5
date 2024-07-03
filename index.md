@@ -85,7 +85,7 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 **Random Forest Model**
 1. Build new data set from original data : randomly select the data while keeping the same number of rows with the original data set.
 2. While we don't use all the features for training the trees, we randomly select subset of features and use only those selected for training.
-3. The prediction is done by passing in a new data for all the trees generated, and choose the majority voting.
+3. The prediction is done by passing in a new data for all the trees generated, and choosing the majority voting.
 
 **Evaluation**
 The model achieved the following performance metrics:
