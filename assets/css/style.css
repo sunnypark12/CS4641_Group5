@@ -124,8 +124,8 @@ img {
 
 code {
     background: #f4f4f4;
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
+    padding: 0;
+    border-radius: 2px;
     color: #c7254e;
     font-size: 12px;
 }
