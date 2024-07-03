@@ -120,23 +120,31 @@ In such cases, stratified k-fold cross-validation is preferred. This method ensu
 By maintaining this ratio, stratified k-fold cross-validation provides more reliable and consistent evaluation metrics across all folds, regardless of the metric chosen.
 
 OUTPUT: 
+
 Cross-Validation ROC-AUC Scores: [0.93936966 0.93418202 0.92759119 0.93625858 0.90790899]
+
 Mean ROC-AUC Score: 0.929062086192368
 
 
 ## Random Forest Model## 
-1. Build new data set from original data : randomly select the data while keeping the same number of rows with the original data set. (redundancy is allowed!) : Bootstrapping or Bagging
-2.  While we don't use all the features for training the trees, we randomly select subset of features and use only them for training.
+1. Build new data set from original data : randomly select the data while keeping the same number of rows with the original data set.
+2. While we don't use all the features for training the trees, we randomly select subset of features and use only them for training.
 3. The prediction is done by passing in a new data for all the trees generated, and choose the majority voting.
 
 **Evaluation**
 The model achieved the following performance metrics:
 
-Precision: 0.84 for class 0, 0.96 for class 1
-Recall: 0.96 for class 0, 0.84 for class 1
-F1-score: 0.89 for both classes
-ROC-AUC Score: 0.957
-Model Accuracy: 89.33%
+| Class | Precision | Recall | F1-score | Support |
+|-------|-----------|--------|----------|---------|
+| 0     | 0.84      | 0.96   | 0.89     | 71      |
+| 1     | 0.96      | 0.84   | 0.89     | 79      |
+| **Accuracy**     |       |        | 0.89     | 150     |
+| **Macro avg**    | 0.90  | 0.90   | 0.89     | 150     |
+| **Weighted avg** | 0.90  | 0.89   | 0.89     | 150     |
+
+**ROC-AUC Score:** 0.9568550543768942  
+**Model Accuracy:** 89.33%
+
 
 **Visualization**
 We also visualized the relationship between the number of trees in the Random Forest model and the model's accuracy:
