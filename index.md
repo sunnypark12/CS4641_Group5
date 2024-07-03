@@ -134,20 +134,22 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 3. The prediction is done by passing in a new data for all the trees generated, and choose the majority voting.
 
 **Evaluation**
+
 The model achieved the following performance metrics:
       
-      | Class | Precision | Recall | F1-score | Support |
-      |-------|-----------|--------|----------|---------|
-      | 0     | 0.84      | 0.96   | 0.89     | 71      |
-      | 1     | 0.96      | 0.84   | 0.89     | 79      |
-      | **Accuracy**     |       |        | 0.89     | 150     |
-      | **Macro avg**    | 0.90  | 0.90   | 0.89     | 150     |
-      | **Weighted avg** | 0.90  | 0.89   | 0.89     | 150     |
+   | Class | Precision | Recall | F1-score | Support |
+   |-------|-----------|--------|----------|---------|
+   | 0     | 0.84      | 0.96   | 0.89     | 71      |
+   | 1     | 0.96      | 0.84   | 0.89     | 79      |
+   | **Accuracy**     |       |        | 0.89     | 150     |
+   | **Macro avg**    | 0.90  | 0.90   | 0.89     | 150     |
+   | **Weighted avg** | 0.90  | 0.89   | 0.89     | 150     |
 
-      **ROC-AUC Score:** 0.9568550543768942  
-      **Model Accuracy:** 89.33%
+   **ROC-AUC Score:** 0.9568550543768942  
+   **Model Accuracy:** 89.33%
 
 **Visualization**
+
 We also visualized the relationship between the number of trees in the Random Forest model and the model's accuracy:
 
 
