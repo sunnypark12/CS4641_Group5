@@ -17,13 +17,13 @@ body {
 header {
     background: #02006c; /* Dark blue variant */
     color: #fff;
-    padding: 2rem 0;
+    padding: 3rem 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    margin: 0;
+    margin: 2;
     font-size: 2.5rem;
 }
 
@@ -31,7 +31,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 3rem 0;
 }
 
 nav a {
@@ -46,9 +46,9 @@ nav a:hover {
 }
 
 main {
-    padding: 10rem; /* Increased padding for more space around text */
+    padding: 12rem; /* Increased padding for more space around text */
     max-width: 1000px;
-    margin: 4rem auto;
+    margin: 5rem auto;
     background: #03002e; /* Dark blue variant */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -72,7 +72,7 @@ a:hover {
 }
 
 table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
     margin: 1.5rem 0;
     background: #010057; /* Dark blue variant */
@@ -86,7 +86,7 @@ table, th, td {
 }
 
 th, td {
-    padding: 2rem;
+    padding: 3rem;
     text-align: left;
 }
 
@@ -98,7 +98,7 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 2rem auto;
+    margin: 3rem auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -129,5 +129,5 @@ blockquote {
 
 /* Add padding to left and right */
 .container {
-    padding: 4 4rem;
+    padding: 5 5rem;
 }
