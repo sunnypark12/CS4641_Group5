@@ -47,11 +47,14 @@ print(cleaned_df.head())
 
 print("Cleaned dataset saved to:", cleaned_file_path)
 ```
+
 Below are the comparison images between the dataset before and after cleaning:
+
 **Before Cleaning**
+![Before_Cleaning](GitHub_Pages/Images/Before_Cleaning.png)
 
 **After Cleaning**
-
+![After_Cleaning](GitHub_Pages/Images/After_Cleaning.png)
 As illustrated, the data cleaning process significantly improved the dataset quality, making it more suitable for subsequent analysis and modeling.
 
 ## Methods
