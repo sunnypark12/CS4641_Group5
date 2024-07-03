@@ -48,6 +48,7 @@ As illustrated, the data cleaning process significantly improved the dataset qua
    - **Extracting Important Feaetures (pandas):** to ensure data integration.
 <br>
 <br>
+
 ## 1st Supervised Method: Random Forest Model ##
 
 In our study, we utilized the Random Forest classifier to predict heart failure based on the cleaned dataset.
@@ -60,6 +61,7 @@ In our study, we utilized the Random Forest classifier to predict heart failure 
 3. Scaling Features: Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
 ![ScaleData](GitHub_Pages/Images/ScaleData.png)
 <br>
+
 **Model Training and Evaluation**
 
 We used Stratified K-Fold cross-validation to estimate the performance of our model. 
