@@ -57,17 +57,90 @@ Below are the comparison images between the dataset before and after cleaning:
 ![After_Cleaning](GitHub_Pages/Images/After_Cleaning.png)
 As illustrated, the data cleaning process significantly improved the dataset quality, making it more suitable for subsequent analysis and modeling.
 
-## Methods
-
+## Methods Planning on Implementation
 1. **Supervised Methods:**
-   - **KNN (scikit-learn):** For simple predictions based on similarity and visualization of the data.
-   - **Random Forest Classification (sklearn):** For accurate predictions. In a study trying to predict type-2 diabetes, Random Forest performed the best out of 7 ML methods surveyed. Assuming that our disease prediction has a similar structure, using this technique would fit well.
-   - **Neural Networks (pytorch):** For handling high-dimensional data with deep learning techniques. NN usually has the highest flexibility and thus can result in the best result for our model.
+   - **Random Forest Classification (sklearn):**
+      - For accurate predictions. In a study trying to predict type-2 diabetes, Random Forest performed the best out of 7 ML methods surveyed. Assuming that our disease prediction has a similar structure, using this technique would fit well.
+   - **KNN (scikit-learn):**
+      - For simple predictions based on similarity and visualization of the data.
+   - **Neural Networks (pytorch):**
+      - For handling high-dimensional data with deep learning techniques. NN usually has the highest flexibility and thus can result in the best result for our model.
 
-2. **Data Preprocessing:**
-   - **Dimensionality Reduction with PCA:** To simplify data and remove redundant features and improve model performance.
-   - **Fill in missing data (pandas):** To ensure a complete dataset.
-   - **Joining different datasets (pandas):** To ensure data integration.
+3. **Data Preprocessing:**
+   - **Dimensionality Reduction with PCA:**
+      - To simplify data and remove redundant features and improve model performance.
+   - **Fill in missing data (pandas):**
+      - To ensure a complete dataset.
+   - **Joining different datasets (pandas):**
+      - To ensure data integration.
+
+## Current Progress ##
+**First Supervised Method: Random Forest Model**
+In our study, we utilized the Random Forest classifier to predict heart failure based on the cleaned dataset. Below are the steps we followed:
+
+1. Loading the Dataset: We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+
+2. Handling Categorical Variables: We used label encoding for categorical variables, as it is suitable for tree-based algorithms like Random Forest.
+
+```
+# Label Encoding of Categorical Variables
+# Initialize a dictionary to store label encoders
+label_encoders = {}
+for col in string_col:
+    LE = LabelEncoder()
+    df[col] = LE.fit_transform(df[col])
+    # fit: During the fitting process, LabelEncoder learns the unique classes present in the data and assigns each class a unique integer.
+    # transform: After learning the classes, it then transforms the original categorical values into their corresponding integer codes.
+    label_encoders[col] = LE
+```
+
+3. Scaling Features: Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
+```
+# Split the data into features and target
+X = df.drop('HeartDisease', axis=1)
+y = df['HeartDisease']
+
+# Scale numerical features 
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
+# fit: compute mean and standard deviation for each feature from the training data
+# transform: standardization (ensure each feature has mean: 0 and standard deviation: 1)
+```
+
+**Model Training and Evaluation**
+We used Stratified K-Fold cross-validation to estimate the performance of our model. 
+
+1. K-fold cross-validation :
+We divide the samples and the associated targets into 𝑘 distinct sets, ensuring that each set is exclusive of the others. This process is known as k-fold cross-validation.
+Using KFold from scikit-learn, we can split any dataset into 𝑘 equal parts. Each sample is assigned a value from 0 to 𝑘 − 1, ensuring that each subset is used for both training and validation in different iterations.
+
+2. Stratified k-fold cross-validation :
+For skewed datasets, such as those with 90% positive and 10% negative samples, using simple k-fold cross-validation can result in folds with only negative samples.
+In such cases, stratified k-fold cross-validation is preferred. This method ensures that the ratio of labels (e.g., 90% positive and 10% negative) remains consistent in each fold.
+By maintaining this ratio, stratified k-fold cross-validation provides more reliable and consistent evaluation metrics across all folds, regardless of the metric chosen.
+
+OUTPUT: 
+Cross-Validation ROC-AUC Scores: [0.93936966 0.93418202 0.92759119 0.93625858 0.90790899]
+Mean ROC-AUC Score: 0.929062086192368
+
+
+## Random Forest Model## 
+1. Build new data set from original data : randomly select the data while keeping the same number of rows with the original data set. (redundancy is allowed!) : Bootstrapping or Bagging
+2.  While we don't use all the features for training the trees, we randomly select subset of features and use only them for training.
+3. The prediction is done by passing in a new data for all the trees generated, and choose the majority voting.
+
+**Evaluation**
+The model achieved the following performance metrics:
+
+Precision: 0.84 for class 0, 0.96 for class 1
+Recall: 0.96 for class 0, 0.84 for class 1
+F1-score: 0.89 for both classes
+ROC-AUC Score: 0.957
+Model Accuracy: 89.33%
+
+**Visualization**
+We also visualized the relationship between the number of trees in the Random Forest model and the model's accuracy:
+
 
 ## Results/Discussion
 
