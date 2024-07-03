@@ -17,6 +17,34 @@ According to the CDC [1], heart failure is the leading cause of death in the wor
 
 Despite significant advances in medical technology, accurately predicting heart failure remains a challenging task. Many existing models are not generalizable across different patient populations and often fail to provide actionable insights for healthcare providers. The complexity and variability of human physiology necessitate more sophisticated predictive models that can handle diverse and high-dimensional data. For instance, several research papers like [4] have identified various factors, including environmental, genetic, and lifestyle factors, that are correlated with heart failure risk, underscoring the need for improved predictive models that effectively capture and embody the relationships among them. Such models are crucial for identifying high-risk patients earlier and more accurately in a wider range of scope, enhancing treatment plans and reducing mortality rates. Leveraging machine learning models can provide robust, reliable predictions in clinical settings.
 
+## Data Cleaning
+
+Our group decided to utilize the first dataset we found from Kaggle, the **Heart Failure Prediction Dataset**. The dataset contained some missing values and inconsistencies that needed to be addressed before we could proceed with our analysis. Here, we describe the steps we took to clean the dataset and provide a comparison of the dataset before and after cleaning.
+
+### Cleaning Process
+**Handling Missing Values**:
+   - We identified that the dataset had several missing values, particularly in the `RestingBP` and `Cholesterol` columns. These missing values were addressed by removing rows with zero values in these columns to ensure the accuracy and integrity of our data.
+
+### Cleaning Code
+
+```python
+import pandas as pd
+
+# Load the dataset
+file_path = './Data/heart.csv'
+df = pd.read_csv(file_path)
+
+# Remove rows where RestingBP or Cholesterol columns have zero values
+cleaned_df = df[(df['RestingBP'] != 0) & (df['Cholesterol'] != 0)]
+
+# Save the cleaned dataset to a new CSV file
+cleaned_file_path = 'cleaned_heart.csv'
+cleaned_df.to_csv(cleaned_file_path, index=False)
+
+# Display the first few rows of the cleaned dataframe
+print(cleaned_df.head())
+
+print("Cleaned dataset saved to:", cleaned_file_path)
 ## Methods
 
 1. **Supervised Methods:**
@@ -49,7 +77,7 @@ Despite significant advances in medical technology, accurately predicting heart 
 
 [Gantt Chart Link](https://docs.google.com/spreadsheets/d/1hMPUnIPTwdgqIaGhtbohadbrvBnN5f_r/edit?usp=sharing&ouid=114437293637701873553&rtpof=true&sd=true)
 
-![Gantt Chart](assets/images/CS4641_Gantt_Chart.png)
+![Gantt Chart](GitHub_Pages/Images/CS4641_Gantt_Chart.png)
 
 ## Contribution Table
 
@@ -60,5 +88,3 @@ Despite significant advances in medical technology, accurately predicting heart 
 | Sunny    | Dataset research and validation, problem and motivation set up                              |
 | Shayahn  | Dataset research and validation, introduction of topic for project proposal                 |
 | Joshua   | Dataset research and validation, discovering potential implementations of ML algorithms.    |
-
-
