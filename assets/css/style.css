@@ -57,7 +57,7 @@ main {
 
 h2, h3, h4 {
     color: #ddd;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 a {
@@ -86,7 +86,7 @@ table, th, td {
 }
 
 th, td {
-    padding: 1rem;
+    padding: 2rem;
     text-align: left;
 }
 
@@ -129,5 +129,5 @@ blockquote {
 
 /* Add padding to left and right */
 .container {
-    padding: 0 4rem;
+    padding: 2 4rem;
 }
