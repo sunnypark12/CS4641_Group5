@@ -1,7 +1,7 @@
 /* Reset some default browser styles */
 * {
     margin: 30px;
-    padding: 5px;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -146,9 +146,15 @@ blockquote {
     color: #bbb;
 }
 
-/* Add padding to left and right */
+ul, ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem; /* Reduced space between list items */
+}
+
 .container {
     padding: 0 2rem;
 }
-
-https://sunnypark12.github.io/CS4641_Group5/
