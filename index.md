@@ -75,8 +75,10 @@ As illustrated, the data cleaning process significantly improved the dataset qua
       - To ensure data integration.
 
 ## Current Progress ##
+
 **First Supervised Method: Random Forest Model**
-In our study, we utilized the Random Forest classifier to predict heart failure based on the cleaned dataset. Below are the steps we followed:
+
+In our study, we utilized the Random Forest classifier to predict heart failure based on the cleaned dataset.
 
 1. Loading the Dataset: We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
 
@@ -111,19 +113,19 @@ X = scaler.fit_transform(X)
 We used Stratified K-Fold cross-validation to estimate the performance of our model. 
 
 1. K-fold cross-validation :
-We divide the samples and the associated targets into 𝑘 distinct sets, ensuring that each set is exclusive of the others. This process is known as k-fold cross-validation.
-Using KFold from scikit-learn, we can split any dataset into 𝑘 equal parts. Each sample is assigned a value from 0 to 𝑘 − 1, ensuring that each subset is used for both training and validation in different iterations.
+- We divide the samples and the associated targets into 𝑘 distinct sets, ensuring that each set is exclusive of the others. This process is known as k-fold cross-validation.
+- Using KFold from scikit-learn, we can split any dataset into 𝑘 equal parts. Each sample is assigned a value from 0 to 𝑘 − 1, ensuring that each subset is used for both training and validation in different iterations.
 
 2. Stratified k-fold cross-validation :
-For skewed datasets, such as those with 90% positive and 10% negative samples, using simple k-fold cross-validation can result in folds with only negative samples.
-In such cases, stratified k-fold cross-validation is preferred. This method ensures that the ratio of labels (e.g., 90% positive and 10% negative) remains consistent in each fold.
-By maintaining this ratio, stratified k-fold cross-validation provides more reliable and consistent evaluation metrics across all folds, regardless of the metric chosen.
+- For skewed datasets, such as those with 90% positive and 10% negative samples, using simple k-fold cross-validation can result in folds with only negative samples.
+- In such cases, stratified k-fold cross-validation is preferred. This method ensures that the ratio of labels (e.g., 90% positive and 10% negative) remains consistent in each fold.
+- By maintaining this ratio, stratified k-fold cross-validation provides more reliable and consistent evaluation metrics across all folds, regardless of the metric chosen.
 
-OUTPUT: 
-
-Cross-Validation ROC-AUC Scores: [0.93936966 0.93418202 0.92759119 0.93625858 0.90790899]
-
-Mean ROC-AUC Score: 0.929062086192368
+   OUTPUT: 
+   
+   Cross-Validation ROC-AUC Scores: [0.93936966 0.93418202 0.92759119 0.93625858 0.90790899]
+   
+   Mean ROC-AUC Score: 0.929062086192368
 
 
 ## Random Forest Model## 
