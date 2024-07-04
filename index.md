@@ -87,19 +87,6 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 2. While we don't use all the features for training the trees, we randomly select subset of features and use only those selected for training.
 3. The prediction is done by passing in a new data for all the trees generated, and choosing the majority voting.
 
-**Evaluation**
-The model achieved the following performance metrics:
-      
-   | Class | Precision | Recall | F1-score | Support |
-   |-------|-----------|--------|----------|---------|
-   | 0     | 0.84      | 0.96   | 0.89     | 71      |
-   | 1     | 0.96      | 0.84   | 0.89     | 79      |
-   | **Accuracy**     |       |        | 0.89     | 150     |
-   | **Macro avg**    | 0.90  | 0.90   | 0.89     | 150     |
-   | **Weighted avg** | 0.90  | 0.89   | 0.89     | 150     |
-
-   **ROC-AUC Score:** 0.9568550543768942  
-   **Model Accuracy:** 89.33%
 <br>
 
 **Visualization**
@@ -111,9 +98,22 @@ We also visualized the relationship between the number of trees in the Random Fo
 
 ## Results/Discussion
 
-1. **Validation Metrics:** Recall, Precision, F1-score, Conditional Entropy, Mutual Information.
-2. **Project Goal:** Create an ML model that more accurately predicts the risk of heart disease, utilizing various datasets and algorithms to provide reliable insights for healthcare providers.
-3. **Expected Results:** There exists a correlation between the risk of heart failure and external factors such as lifestyle, sleep, and genetics, with changes in these factors influencing said risk.
+**Evaluation**
+The Random Forest model achieved the following performance metrics:
+      
+   | Class | Precision | Recall | F1-score | Support |
+   |-------|-----------|--------|----------|---------|
+   | 0     | 0.86      | 0.91   | 0.89     | 77      |
+   | 1     | 0.93      | 0.90   | 0.91     | 107      |
+   | **Accuracy**     |       |        | 0.90     | 184     |
+   | **Macro avg**    | 0.90  | 0.90   | 0.90     | 184     |
+   | **Weighted avg** | 0.90  | 0.90   | 0.90     | 184     |
+
+   **ROC-AUC Score:** 0.9429542420196626  
+   **Model Accuracy:** 90.22%
+
+
+
 <br>
 
 ## References
