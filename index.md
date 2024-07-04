@@ -72,10 +72,11 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 - By maintaining this ratio, stratified k-fold cross-validation provides more reliable and consistent evaluation metrics across all folds, regardless of the metric chosen.
 
    **OUTPUT**
+
+   Cross-Validation ROC-AUC Scores: [0.94392635 0.93316595 0.89616212 0.94548418 0.90358609]
+
+   Mean ROC-AUC Score: 0.9244649393203309
   
-   Cross-Validation ROC-AUC Scores: [0.93936966 0.93418202 0.92759119 0.93625858 0.90790899]
-  
-   Mean ROC-AUC Score: 0.929062086192368
 <br>
 
 **Random Forest Model**
