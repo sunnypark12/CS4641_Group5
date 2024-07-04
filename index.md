@@ -112,12 +112,26 @@ The model achieved the following performance metrics:
 The confusion matrix representing our precision, Recall, F1-score is as shown below:
 
 ![Confusion Matrix](GitHub_Pages/Images/confusionmatrix.png)
+<br>
 **Precision:** The model achieved a precision of 0.84. This means that 84% of the instances predicted as positive (heart disease) by the model are indeed positive. This high precision indicates that the model has a low false positive rate, which is crucial for minimizing the misclassification of healthy individuals as having heart disease.
 
 **Recall:** The model achieved a recall of 0.96. This means that 96% of the actual positive cases (individuals with heart disease) were correctly identified by the model. This high recall value demonstrates the model's effectiveness in identifying nearly all patients who have heart disease, which is essential for ensuring that high-risk individuals are detected and can receive appropriate medical attention.
 
 **F1-Score:** The F1-score, which is the harmonic mean of precision and recall, is 0.89. This score represents a balanced measure of the model's accuracy, taking both precision and recall into account. An F1-score of 0.89 indicates that the model performs well in both detecting heart disease and minimizing false alarms, making it a reliable tool for this predictive task.
 <br>
+
+**Comparing Random Forest Accuracy Using Feature Elimination**
+
+Plot of Feature Importance
+![feature](GitHub_Pages/Images/feature.jpeg)
+<br>
+
+Recursive Feature Elimination Graph
+![graph](GitHub_Pages/Images/graph.jpeg)
+
+For Random Forest Models, using all features results to maximum performance. 
+
+According to the graphs, we can conclude that in our Random Forest models, eliminating features has approximate linear decrease in terms of model accuracy. 
 <br>
 
 **Next Steps**
