@@ -5,12 +5,16 @@ This project aims to develop machine learning models for analyzing and predictin
 The project is structured into various directories for data preprocessing, analysis, and implementation of both supervised and unsupervised learning algorithms.
 
 ## Directory Structure
-- **Data**: Contains raw and preprocessed datasets.
-- **DataAnalysis**: Scripts and notebooks for exploratory data analysis.
-- **GitHub_Pages**: Resources for the project's GitHub Pages site.
-- **Preprocessing**: Scripts for data cleaning and preprocessing.
-- **SupervisedLearning**: Implementation of supervised learning algorithms.
-- **UnsupervisedLearning**: Implementation of unsupervised learning algorithms.
+- **/Data/**: Contains raw and preprocessed datasets.
+- **/DataAnalysis/**: Scripts and notebooks for exploratory data analysis.
+- **/GitHub_Pages/**: Resources for the project's GitHub Pages site.
+     - **GitHub_Pages/Images/**: Images used for the GitHub Pages site, such as plots, graphs, and code snapshots
+- **/Preprocessing/**: Scripts for data cleaning and preprocessing.
+     - **/Preprocessing/PCA.py**: Script implementing PCA for dimensionality reduction, which will be used for KMeans
+     - **/Preprocessing/clean.py**: Script for cleaning missing values from the dataset
+- **/SupervisedLearning/**: Implementation of supervised learning algorithms.
+     - **/SupervisedLearning/RandomForest.py**: Script implementing the random forest model using provided dataset
+- **/UnsupervisedLearning/**: Implementation of unsupervised learning algorithms.
 
 ## Getting Started
 ### Prerequisites
