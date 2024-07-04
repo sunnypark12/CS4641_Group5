@@ -17,12 +17,15 @@ Despite significant advances in medical technology, accurately predicting heart 
 
 ## Data Cleaning
 Our group decided to utilize the first dataset we found from Kaggle, the _Heart Failure Prediction Dataset_. The dataset contained some missing values and inconsistencies that needed to be addressed before we could proceed with our analysis. Here, we describe the steps we took to clean the dataset and provide a comparison of the dataset before and after cleaning.
+<br>
+
 **Cleaning Proces: Handling Missing Values**:
    - We identified that the dataset had several missing values, particularly in the `RestingBP` and `Cholesterol` columns. These missing values were addressed by removing rows with zero values in these columns to ensure the accuracy and integrity of our data.
 <br>
 
 **Cleaning Code**
 
+- We attempted using K-Means, but had lower accuracy, so we are planning on improving the code for the next step.
 ![CleaningCode](GitHub_Pages/Images/CleaningCode.png)
 
 **Before Cleaning**
@@ -46,14 +49,19 @@ As illustrated, the data cleaning process significantly improved the dataset qua
    - **Extracting Important Features (pandas):** to ensure data integration.
 <br>
 <br>
+
 ## 1st Supervised Method: Random Forest Model ##
 In our study, we utilized the Random Forest classifier to predict heart failure based on the cleaned dataset.
-1. Loading the Dataset: We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
-2. Handling Categorical Variables: We used label encoding for categorical variables, as it is suitable for tree-based algorithms like Random Forest.
+
+1. **Loading the Dataset:** We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+
+2. **Handling Categorical Variables:** We used label encoding for categorical variables, as it is suitable for tree-based algorithms like Random Forest.
 ![LabelEncoding](GitHub_Pages/Images/LabelEncoding.png)
-3. Scaling Features: Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
+
+3. **Scaling Features:** Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
 ![ScaleData](GitHub_Pages/Images/ScaleData.png)
 <br>
+
 **Model Training and Evaluation**
 We used Stratified K-Fold cross-validation to estimate the performance of our model. 
 
@@ -105,12 +113,17 @@ Following the analysis of our Random Forest model, we will be implementing a KMe
 
 ## References
 [1] “FastStats,” Leading Causes of Death. https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm
+
 [2] J. Wang, “Heart Failure Prediction with Machine Learning: A Comparative Study,” Journal of Physics. Conference Series, vol. 2031, no. 1, p. 012068, Sep. 2021, doi: 10.1088/1742-6596/2031/1/012068.
+
 [3] M. Badawy, N. Ramadan, and H. A. Hefny, “Healthcare predictive analytics using machine learning and deep learning techniques: a survey,” Journal of Electrical Systems and Information Technology, vol. 10, no. 1, Aug. 2023, doi: 10.1186/s43067-023-00108-y.
+
 [4] V. Escolar et al., “Impact of environmental factors on heart failure decompensations,” ESC Heart Failure, vol. 6, no. 6, pp. 1226–1232, Sep. 2019, doi: https://doi.org/10.1002/ehf2.12506.
+
 ## Gantt Chart
 [Gantt Chart Link](https://docs.google.com/spreadsheets/d/1hMPUnIPTwdgqIaGhtbohadbrvBnN5f_r/edit?usp=sharing&ouid=114437293637701873553&rtpof=true&sd=true)
 ![Gantt Chart](GitHub_Pages/Images/CS4641_Gantt_Chart.png)
+
 ## Contribution Table
 | Member   | Contributions                                                                               |
 |----------|---------------------------------------------------------------------------------------------|
