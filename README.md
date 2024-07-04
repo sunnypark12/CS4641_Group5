@@ -15,6 +15,7 @@ The project is structured into various directories for data preprocessing, analy
 - **/SupervisedLearning/**: Implementation of supervised learning algorithms.
      - **/SupervisedLearning/randomforest.py**: Script implementing the random forest model using provided dataset
      - **/SupervisedLearning/randomforest.ipynb**: Jupyter notebook containing code for random forest model and visualizations and quantitative metrics representing model output
+- **/index.md**: GitHub Page detailing all progress of the project in the form of a report
 
 ## Getting Started
 ### Prerequisites
@@ -34,4 +35,4 @@ Navigate to the Preprocessing directory and run the preprocessing scripts to cle
 Explore the data using the notebooks and scripts in the DataAnalysis directory.
 
 **Model Training**
-Train and evaluate models using the scripts in the SupervisedLearning and UnsupervisedLearning directories.
+Train and evaluate models using the scripts in the SupervisedLearning directory.
