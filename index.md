@@ -26,9 +26,6 @@ Our group decided to utilize the first dataset we found from Kaggle, the _Heart 
 **Cleaning Proces: Handling Missing Values**:
    - We identified that the dataset had several missing values, particularly in the `RestingBP` and `Cholesterol` columns. The missing data is indicated by the value 0. First we a fit a kmeans model on the columns that are not the label and cholesterol, and assign a cluster to each row in the dataset. Now iterating through each cluster, we choose the data and take the mean of our target column. For all missing values in our target column that is also in the same current cluster, we set it equal to this mean value.
 
-**Cleaning Code**
-![CleaningCode](GitHub_Pages/Images/CleaningCode.png)
-
 **Before Cleaning**
 ![Before_Cleaning](GitHub_Pages/Images/Before_Cleaning.png)
 
