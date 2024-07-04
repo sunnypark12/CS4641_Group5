@@ -87,7 +87,7 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 
 **Visualization**
 By creating a heatmap, we were able to determine the optimal parameters for our Random Forest model
-
+![Heatmap](GitHub_Pages/Images/hyperparameter_heatmap.png)
 
 **Evaluation**
 
