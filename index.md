@@ -83,14 +83,11 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 
 <br>
 
-**Visualization**
-
-We also visualized the relationship between the number of trees in the Random Forest model and the model's accuracy:
-![RFAccuracy](GitHub_Pages/Images/RFAccuracy.png)
-<br>
-<br>
-
 ## Results/Discussion
+
+**Visualization**
+By creating a heatmap, we were able to determine the optimal parameters for our Random Forest model
+
 
 **Evaluation**
 
@@ -98,15 +95,14 @@ The Random Forest model achieved the following performance metrics:
       
    | Class | Precision | Recall | F1-score | Support |
    |-------|-----------|--------|----------|---------|
-   | 0     | 0.86      | 0.91   | 0.89     | 77      |
-   | 1     | 0.93      | 0.90   | 0.91     | 107      |
-   | **Accuracy**     |       |        | 0.90     | 184     |
-   | **Macro avg**    | 0.90  | 0.90   | 0.90     | 184     |
-   | **Weighted avg** | 0.90  | 0.90   | 0.90     | 184     |
+   | 0     | 0.87      | 0.92   | 0.89     | 77      |
+   | 1     | 0.94      | 0.90   | 0.92     | 107      |
+   | **Accuracy**     |       |        | 0.91     | 184     |
+   | **Macro avg**    | 0.90  | 0.91   | 0.91     | 184     |
+   | **Weighted avg** | 0.91  | 0.91   | 0.91     | 184     |
 
-   **ROC-AUC Score:** 0.9429542420196626  
-   **Model Accuracy:** 90.22%
-
+   **ROC-AUC Score:** 0.9390702755188737  
+   **Model Accuracy:** 90.76%
 <br>
 
 We also visualized the relationship between the number of trees in the Random Forest model and the effect on the model's accuracy:
