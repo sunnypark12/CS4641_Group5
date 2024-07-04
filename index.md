@@ -10,13 +10,16 @@ According to the CDC [1], heart failure is the leading cause of death in the wor
    - Features: Data collected from CDC, including all the major risk factors for heart failure
 <br>
 <br>
+
 ## Problem/Motivation
 Despite significant advances in medical technology, accurately predicting heart failure remains a challenging task. Many existing models are not generalizable across different patient populations and often fail to provide actionable insights for healthcare providers. The complexity and variability of human physiology necessitate more sophisticated predictive models that can handle diverse and high-dimensional data. For instance, several research papers like [4] have identified various factors, including environmental, genetic, and lifestyle factors, that are correlated with heart failure risk, underscoring the need for improved predictive models that effectively capture and embody the relationships among them. Such models are crucial for identifying high-risk patients earlier and more accurately in a wider range of scope, enhancing treatment plans and reducing mortality rates. Leveraging machine learning models can provide robust, reliable predictions in clinical settings.
 <br>
+
 ## Data Cleaning
 Our group decided to utilize the first dataset we found from Kaggle, the _Heart Failure Prediction Dataset_. The dataset contained some missing values and inconsistencies that needed to be addressed before we could proceed with our analysis. Here, we describe the steps we took to clean the dataset and provide a comparison of the dataset before and after cleaning.
 **Cleaning Proces: Handling Missing Values**:
    - We identified that the dataset had several missing values, particularly in the `RestingBP` and `Cholesterol` columns. These missing values were addressed by removing rows with zero values in these columns to ensure the accuracy and integrity of our data.
+<br>
 
 **Cleaning Code**
 
@@ -31,6 +34,7 @@ Our group decided to utilize the first dataset we found from Kaggle, the _Heart 
 ![After_Cleaning](GitHub_Pages/Images/After_Cleaning.png)
 As illustrated, the data cleaning process significantly improved the dataset quality, making it more suitable for subsequent analysis and modeling.
 <br>
+
 ## Methods Planning on Implementation
 1. **Supervised Methods:**
    - **Random Forest Classification (sklearn):** COMPLETED
