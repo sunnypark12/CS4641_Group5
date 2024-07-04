@@ -17,11 +17,17 @@ Despite significant advances in medical technology, accurately predicting heart 
 Our group decided to utilize the first dataset we found from Kaggle, the _Heart Failure Prediction Dataset_. The dataset contained some missing values and inconsistencies that needed to be addressed before we could proceed with our analysis. Here, we describe the steps we took to clean the dataset and provide a comparison of the dataset before and after cleaning.
 **Cleaning Proces: Handling Missing Values**:
    - We identified that the dataset had several missing values, particularly in the `RestingBP` and `Cholesterol` columns. These missing values were addressed by removing rows with zero values in these columns to ensure the accuracy and integrity of our data.
+
 **Cleaning Code**
+
 ![CleaningCode](GitHub_Pages/Images/CleaningCode.png)
+
 **Before Cleaning**
+
 ![Before_Cleaning](GitHub_Pages/Images/Before_Cleaning.png)
+
 **After Cleaning**
+
 ![After_Cleaning](GitHub_Pages/Images/After_Cleaning.png)
 As illustrated, the data cleaning process significantly improved the dataset quality, making it more suitable for subsequent analysis and modeling.
 <br>
