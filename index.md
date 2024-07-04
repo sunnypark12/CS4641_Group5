@@ -155,10 +155,11 @@ Following the analysis of our Random Forest model, we will be implementing a KMe
 
 
 ## Contribution Table
-| Member   | Contributions                                                                               |
-|----------|---------------------------------------------------------------------------------------------|
-| Elmo     | KMeans Data Cleaning/Encoding, Random Forest Analysis, PCA Visualizations                   |
-| Stan     | Data Analysis, Random Forest Code Implementation, Visualization of Quantitative Metrics     |
-| Sunny    | Data Cleaning, Random Forest Code Implementation, Github Page Design & Update               |
-| Shayahn  | Random Forest Analysis, PCA Code Implementation, Github Page Documentation                  |
-| Joshua   | Random Forest Analysis/Visualization, PCA Code Implementation                               |
+
+Member  | Contributions
+--------|---------------------------------------------------------------------------------------------
+Elmo    | KMeans Data Cleaning/Encoding, Random Forest Analysis, PCA Visualizations
+Stan    | Data Analysis, Random Forest Code Implementation, Visualization of Quantitative Metrics
+Sunny   | Data Cleaning, Random Forest Code Implementation, Github Page Design & Update
+Shayahn | Random Forest Analysis, PCA Code Implementation, Github Page Documentation
+Joshua  | Random Forest Analysis/Visualization, PCA Code Implementation
