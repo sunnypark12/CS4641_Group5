@@ -63,27 +63,35 @@ In our study, we utilized the Random Forest classifier to predict heart failure 
 <br>
 
 **Model Training and Evaluation**
+
 We used Stratified K-Fold cross-validation to estimate the performance of our model. 
 
-1. Stratified k-fold cross-validation :
+**Stratified k-fold cross-validation :**
 - For skewed datasets, such as those with 90% positive and 10% negative samples, using simple k-fold cross-validation can result in folds with only negative samples.
 - In such cases, stratified k-fold cross-validation is preferred. This method ensures that the ratio of labels (e.g., 90% positive and 10% negative) remains consistent in each fold.
 - By maintaining this ratio, stratified k-fold cross-validation provides more reliable and consistent evaluation metrics across all folds, regardless of the metric chosen.
+<br>
+
    **OUTPUT**
   
    Cross-Validation ROC-AUC Scores: [0.93936966 0.93418202 0.92759119 0.93625858 0.90790899]
   
    Mean ROC-AUC Score: 0.929062086192368
+
+  Considering that ROC-AUC Score is approximated to 92%, we could say that our model has admissible performance.
 <br>
+
 **Random Forest Model**
 1. Build new data set from original data : randomly select the data while keeping the same number of rows with the original data set.
 2. While we don't use all the features for training the trees, we randomly select subset of features and use only those selected for training.
 3. The prediction is done by passing in a new data for all the trees generated, and choosing the majority voting.
+<br>
 
 
 ## Results/Discussion
 
-By creating a heatmap, we were able to determine the optimal parameters for our Random Forest model
+By creating a heatmap, we were able to determine the optimal hyperparameters for our Random Forest model: **100 Random Decision Trees(N_estimator)**
+
 ![Heatmap](GitHub_Pages/Images/hyperparameter_heatmap.png)
 <br>
 
@@ -98,18 +106,23 @@ The model achieved the following performance metrics:
    | **Macro avg**    | 0.90  | 0.90   | 0.89     | 150     |
    | **Weighted avg** | 0.90  | 0.89   | 0.89     | 150     |
 
-   **ROC-AUC Score:** 0.9568550543768942  
    **Model Accuracy:** 89.33%
 <br>
 
-The confusion matrix representing our F1-score is as shown below:
+The confusion matrix representing our precision, Recall, F1-score is as shown below:
 
 ![Confusion Matrix](GitHub_Pages/Images/confusionmatrix.png)
+**Precision:** The model achieved a precision of 0.84. This means that 84% of the instances predicted as positive (heart disease) by the model are indeed positive. This high precision indicates that the model has a low false positive rate, which is crucial for minimizing the misclassification of healthy individuals as having heart disease.
+
+**Recall:** The model achieved a recall of 0.96. This means that 96% of the actual positive cases (individuals with heart disease) were correctly identified by the model. This high recall value demonstrates the model's effectiveness in identifying nearly all patients who have heart disease, which is essential for ensuring that high-risk individuals are detected and can receive appropriate medical attention.
+
+**F1-Score:** The F1-score, which is the harmonic mean of precision and recall, is 0.89. This score represents a balanced measure of the model's accuracy, taking both precision and recall into account. An F1-score of 0.89 indicates that the model performs well in both detecting heart disease and minimizing false alarms, making it a reliable tool for this predictive task.
 <br>
 <br>
 
 **Next Steps**
 Following the analysis of our Random Forest model, we will be implementing a KMeans model utilizing PCA to compare with the performance of the Random Forest model. We are hoping to achieve a more accurate prediction with the KMeans model.
+<br>
 
 ## References
 [1] “FastStats,” Leading Causes of Death. https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm
@@ -119,6 +132,7 @@ Following the analysis of our Random Forest model, we will be implementing a KMe
 [3] M. Badawy, N. Ramadan, and H. A. Hefny, “Healthcare predictive analytics using machine learning and deep learning techniques: a survey,” Journal of Electrical Systems and Information Technology, vol. 10, no. 1, Aug. 2023, doi: 10.1186/s43067-023-00108-y.
 
 [4] V. Escolar et al., “Impact of environmental factors on heart failure decompensations,” ESC Heart Failure, vol. 6, no. 6, pp. 1226–1232, Sep. 2019, doi: https://doi.org/10.1002/ehf2.12506.
+<br>
 
 ## Gantt Chart
 [Gantt Chart Link](https://docs.google.com/spreadsheets/d/1hMPUnIPTwdgqIaGhtbohadbrvBnN5f_r/edit?usp=sharing&ouid=114437293637701873553&rtpof=true&sd=true)
