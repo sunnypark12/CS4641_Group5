@@ -151,6 +151,7 @@ Following the analysis of our Random Forest model, we will be implementing a KMe
 ## Gantt Chart
 [Gantt Chart Link](https://docs.google.com/spreadsheets/d/1hMPUnIPTwdgqIaGhtbohadbrvBnN5f_r/edit?usp=sharing&ouid=114437293637701873553&rtpof=true&sd=true)
 ![Gantt Chart](GitHub_Pages/Images/CS4641_Gantt_Chart.png)
+<br>
 
 ## Contribution Table
 | Member   | Contributions                                                                               |
