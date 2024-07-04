@@ -96,6 +96,7 @@ We also visualized the relationship between the number of trees in the Random Fo
 ## Results/Discussion
 
 **Evaluation**
+
 The Random Forest model achieved the following performance metrics:
       
    | Class | Precision | Recall | F1-score | Support |
@@ -109,9 +110,15 @@ The Random Forest model achieved the following performance metrics:
    **ROC-AUC Score:** 0.9429542420196626  
    **Model Accuracy:** 90.22%
 
-
-
 <br>
+
+We also visualized the relationship between the number of trees in the Random Forest model and the effect on the model's accuracy:
+![RFAccuracy](GitHub_Pages/Images/RFAccuracy.png)
+<br>
+<br>
+
+
+
 
 ## References
 
