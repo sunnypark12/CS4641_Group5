@@ -139,5 +139,5 @@ We also visualized the relationship between the number of trees in the Random Fo
 | Elmo     | Research and propose models, data processing methods, validation metrics.                   |
 | Stan     | Data Analysis, Random Forest Code Implementation, Visualization of Quantitative Metrics     |
 | Sunny    | Data Cleaning, Random Forest Code Implementation, Github Page Design&Update                 |
-| Shayahn  | Dataset research and validation, introduction of topic for project proposal                 |
+| Shayahn  | Random Forest Analysis, PCA Code Implementation, Github Page Documentation                  |
 | Joshua   | Dataset research and validation, discovering potential implementations of ML algorithms.    |
