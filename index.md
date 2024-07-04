@@ -156,10 +156,30 @@ Following the analysis of our Random Forest model, we will be implementing a KMe
 
 ## Contribution Table
 
-Member  | Contributions
---------|---------------------------------------------------------------------------------------------
-Elmo    | KMeans Data Cleaning/Encoding, Random Forest Analysis, PCA Visualizations
-Stan    | Data Analysis, Random Forest Code Implementation, Visualization of Quantitative Metrics
-Sunny   | Data Cleaning, Random Forest Code Implementation, Github Page Design & Update
-Shayahn | Random Forest Analysis, PCA Code Implementation, Github Page Documentation
-Joshua  | Random Forest Analysis/Visualization, PCA Code Implementation
+<table>
+  <tr>
+    <th style="text-align:center">Member</th>
+    <th style="text-align:center">Contributions</th>
+  </tr>
+  <tr>
+    <td style="text-align:center">Elmo</td>
+    <td style="text-align:center">KMeans Data Cleaning/Encoding, Random Forest Analysis, PCA Visualizations</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Stan</td>
+    <td style="text-align:center">Data Analysis, Random Forest Code Implementation, Visualization of Quantitative Metrics</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Sunny</td>
+    <td style="text-align:center">Data Cleaning, Random Forest Code Implementation, Github Page Design & Update</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Shayahn</td>
+    <td style="text-align:center">Random Forest Analysis, PCA Code Implementation, Github Page Documentation</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Joshua</td>
+    <td style="text-align:center">Random Forest Analysis/Visualization, PCA Code Implementation</td>
+  </tr>
+</table>
+
