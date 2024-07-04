@@ -135,6 +135,7 @@ According to the graphs, we can conclude that in our Random Forest models, elimi
 <br>
 
 **Next Steps**
+
 Following the analysis of our Random Forest model, we will be implementing a KMeans model utilizing PCA to compare with the performance of the Random Forest model. We are hoping to achieve a more accurate prediction with the KMeans model.
 <br>
 
@@ -151,7 +152,7 @@ Following the analysis of our Random Forest model, we will be implementing a KMe
 ## Gantt Chart
 [Gantt Chart Link](https://docs.google.com/spreadsheets/d/1hMPUnIPTwdgqIaGhtbohadbrvBnN5f_r/edit?usp=sharing&ouid=114437293637701873553&rtpof=true&sd=true)
 ![Gantt Chart](GitHub_Pages/Images/CS4641_Gantt_Chart.png)
-<br>
+
 
 ## Contribution Table
 | Member   | Contributions                                                                               |
@@ -161,4 +162,3 @@ Following the analysis of our Random Forest model, we will be implementing a KMe
 | Sunny    | Data Cleaning, Random Forest Code Implementation, Github Page Design & Update               |
 | Shayahn  | Random Forest Analysis, PCA Code Implementation, Github Page Documentation                  |
 | Joshua   | Random Forest Analysis/Visualization, PCA Code Implementation                               |
-
