@@ -84,9 +84,13 @@ The model achieved the following performance metrics:
    **Model Accuracy:** 89.33%
 <br>
 
+The confusion matrix representing our F1-score is as shown below:
+![Confusion Matrix](GitHub_Pages/Images/confusionmatrix.png)
+<br>
+<br>
 
-<br>
-<br>
+**Next Steps**
+Following the analysis of our Random Forest model, we will be implementing a KMeans model utilizing PCA to compare with the performance of the Random Forest model. We are hoping to achieve a more accurate prediction with the KMeans model.
 
 ## References
 [1] “FastStats,” Leading Causes of Death. https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm
