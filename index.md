@@ -85,6 +85,7 @@ The model achieved the following performance metrics:
 <br>
 
 The confusion matrix representing our F1-score is as shown below:
+
 ![Confusion Matrix](GitHub_Pages/Images/confusionmatrix.png)
 <br>
 <br>
