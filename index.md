@@ -24,7 +24,7 @@ Despite significant advances in medical technology, accurately predicting heart 
 Our group decided to utilize the first dataset we found from Kaggle, the _Heart Failure Prediction Dataset_. The dataset contained some missing values and inconsistencies that needed to be addressed before we could proceed with our analysis. Here, we describe the steps we took to clean the dataset and provide a comparison of the dataset before and after cleaning.
 
 **Cleaning Proces: Handling Missing Values**:
-   - We identified that the dataset had several missing values, particularly in the `RestingBP` and `Cholesterol` columns. These missing values were addressed by removing rows with zero values in these columns to ensure the accuracy and integrity of our data.
+   - We identified that the dataset had several missing values, particularly in the `RestingBP` and `Cholesterol` columns. The missing data is indicated by the value 0. First we a fit a kmeans model on the columns that are not the label and cholesterol, and assign a cluster to each row in the dataset. Now iterating through each cluster, we choose the data and take the mean of our target column. For all missing values in our target column that is also in the same current cluster, we set it equal to this mean value.
 
 **Cleaning Code**
 ![CleaningCode](GitHub_Pages/Images/CleaningCode.png)
@@ -66,11 +66,7 @@ In our study, we utilized the Random Forest classifier to predict heart failure 
 
 We used Stratified K-Fold cross-validation to estimate the performance of our model. 
 
-1. K-fold cross-validation :
-- We divide the samples and the associated targets into 𝑘 distinct sets, ensuring that each set is exclusive of the others. This process is known as k-fold cross-validation.
-- Using KFold from scikit-learn, we can split any dataset into 𝑘 equal parts. Each sample is assigned a value from 0 to 𝑘 − 1, ensuring that each subset is used for both training and validation in different iterations.
-
-2. Stratified k-fold cross-validation :
+1. Stratified k-fold cross-validation :
 - For skewed datasets, such as those with 90% positive and 10% negative samples, using simple k-fold cross-validation can result in folds with only negative samples.
 - In such cases, stratified k-fold cross-validation is preferred. This method ensures that the ratio of labels (e.g., 90% positive and 10% negative) remains consistent in each fold.
 - By maintaining this ratio, stratified k-fold cross-validation provides more reliable and consistent evaluation metrics across all folds, regardless of the metric chosen.
@@ -136,8 +132,8 @@ The Random Forest model achieved the following performance metrics:
 
 | Member   | Contributions                                                                               |
 |----------|---------------------------------------------------------------------------------------------|
-| Elmo     | Research and propose models, data processing methods, validation metrics.                   |
+| Elmo     | KMeans Data Cleaning/Encoding, Random Forest Analysis, PCA Visualizations                   |
 | Stan     | Data Analysis, Random Forest Code Implementation, Visualization of Quantitative Metrics     |
 | Sunny    | Data Cleaning, Random Forest Code Implementation, Github Page Design&Update                 |
 | Shayahn  | Random Forest Analysis, PCA Code Implementation, Github Page Documentation                  |
-| Joshua   | Dataset research and validation, discovering potential implementations of ML algorithms.    |
+| Joshua   | Random Forest Analysis/Visualization, PCA Code Implementation                               |
