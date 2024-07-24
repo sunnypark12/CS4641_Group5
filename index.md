@@ -93,6 +93,7 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 ## Results/Discussion
 
 **Random Forest Classification**
+
 By creating a heatmap, we were able to determine the optimal hyperparameters for our Random Forest model: **100 Random Decision Trees(N_estimator)**
 
 ![Heatmap](GitHub_Pages/Images/hyperparameter_heatmap.png)
