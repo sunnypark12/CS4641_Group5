@@ -90,7 +90,7 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 ## 2nd Supervised Method: KNN Model ##
 
 
-## Results/Discussion
+## Results/Discussion ##
 
 **Random Forest Classification**
 
@@ -136,6 +136,8 @@ Recursive Feature Elimination Graph
 For Random Forest Models, using all features results to maximum performance. 
 
 According to the graphs, we can conclude that in our Random Forest models, eliminating features has approximate linear decrease in terms of model accuracy. 
+<br>
+<br>
 <br>
 
 **KNN**
