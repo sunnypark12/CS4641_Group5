@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the dataset
-file_path = './Data/heart.csv'
+file_path = './Data/heart_kmeans_cleansed.csv'
 df = pd.read_csv(file_path)
 
 # Convert string data to appropriate type; object -> string
