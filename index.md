@@ -41,7 +41,7 @@ As illustrated, the data cleaning process significantly improved the dataset qua
 
 ## Methods
 1. **Supervised Methods:**
-   - **Random Forest Classification (sklearn):** for highlighting important features and complex relationships.
+   - **Random Forest Classification (sklearn)** for highlighting important features and complex relationships.
    - **KNN (scikit-learn)** for simple predictions based on similarity and visualization of the data.
    - **Neural Networks (pytorch)** for handling high-dimensional data with deep learning techniques for flexibility.
 2. **Data Preprocessing:**
@@ -87,9 +87,12 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 3. The prediction is done by passing in a new data for all the trees generated, and choosing the majority voting.
 <br>
 
+## 2nd Supervised Method: KNN Model ##
+
 
 ## Results/Discussion
 
+**Random Forest Classification**
 By creating a heatmap, we were able to determine the optimal hyperparameters for our Random Forest model: **100 Random Decision Trees(N_estimator)**
 
 ![Heatmap](GitHub_Pages/Images/hyperparameter_heatmap.png)
@@ -134,9 +137,9 @@ For Random Forest Models, using all features results to maximum performance.
 According to the graphs, we can conclude that in our Random Forest models, eliminating features has approximate linear decrease in terms of model accuracy. 
 <br>
 
-**Next Steps**
+**KNN**
 
-Following the analysis of our Random Forest model, we will be implementing a KMeans model utilizing PCA to compare with the performance of the Random Forest model. We are hoping to achieve a more accurate prediction with the KMeans model.
+
 <br>
 
 ## References
