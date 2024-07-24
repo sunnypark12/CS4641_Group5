@@ -39,15 +39,14 @@ Our group decided to utilize the first dataset we found from Kaggle, the _Heart 
 As illustrated, the data cleaning process significantly improved the dataset quality, making it more suitable for subsequent analysis and modeling.
 <br>
 
-## Methods Planning on Implementation
+## Methods
 1. **Supervised Methods:**
-   - **Random Forest Classification (sklearn):** COMPLETED
+   - **Random Forest Classification (sklearn):** for highlighting important features and complex relationships.
    - **KNN (scikit-learn)** for simple predictions based on similarity and visualization of the data.
    - **Neural Networks (pytorch)** for handling high-dimensional data with deep learning techniques for flexibility.
 2. **Data Preprocessing:**
    - **Dimensionality Reduction with PCA** to simplify data and remove redundant features.
-   - **Fill in missing data (pandas)** COMPLETED
-   - **Extracting Important Features (pandas):** to ensure data integration.
+   - **Fill in missing data (pandas)**
 <br>
 <br>
 
