@@ -51,7 +51,6 @@ As illustrated, the data cleaning process significantly improved the dataset qua
 <br>
 
 ## 1st Supervised Method: Random Forest Model ##
-In our study, we utilized the Random Forest classifier to predict heart failure based on the cleaned dataset.
 
 1. **Loading the Dataset:** We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
 
