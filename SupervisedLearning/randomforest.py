@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the dataset
-file_path = './Data/heart.csv'
+file_path = "../Data/group_cleaned_mean_heart.csv"
 df = pd.read_csv(file_path)
 
 # Convert string data to appropriate type; object -> string
@@ -41,8 +41,8 @@ for col in string_col:
     print()
 
 # Split the data into features and target
-X = df.drop('HeartDisease', axis=1)
-y = df['HeartDisease']
+X = df.drop("HeartDisease", axis=1)
+y = df["HeartDisease"]
 
 # Scale numerical features
 scaler = StandardScaler()
@@ -53,7 +53,7 @@ rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
 # Define the stratified k-fold cross-validation procedure
 kf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 # Perform cross-validation
-cv_scores = cross_val_score(rf_model, X, y, cv=kf, scoring='roc_auc')
+cv_scores = cross_val_score(rf_model, X, y, cv=kf, scoring="roc_auc")
 # Print cross-validation results
 print(f"Cross-Validation ROC-AUC Scores: {cv_scores}")
 print(f"Mean ROC-AUC Score: {cv_scores.mean()}")
@@ -65,27 +65,29 @@ accuracy_scores = []
 for n in n_estimators_range:
     # Define the Random Forest model
     rf_model = RandomForestClassifier(n_estimators=n, random_state=90)
-    
+
     # Perform cross-validation and calculate accuracy
-    cv_scores = cross_val_score(rf_model, X, y, cv=kf, scoring='accuracy')
-    
+    cv_scores = cross_val_score(rf_model, X, y, cv=kf, scoring="accuracy")
+
     # Append the mean accuracy to the list
     accuracy_scores.append(np.mean(cv_scores))
 
 # Plot the results
 plt.figure(figsize=(10, 6))
-plt.plot(n_estimators_range, accuracy_scores, marker='o')
-plt.xlabel('Number of Trees (n_estimators)')
-plt.ylabel('Mean Accuracy')
-plt.title('Random Forest Model Accuracy vs. Number of Trees')
+plt.plot(n_estimators_range, accuracy_scores, marker="o")
+plt.xlabel("Number of Trees (n_estimators)")
+plt.ylabel("Mean Accuracy")
+plt.title("Random Forest Model Accuracy vs. Number of Trees")
 plt.grid(True)
 plt.show()
 
 # Define the Random Forest model
-rf_model = RandomForestClassifier(n_estimators=152, random_state=90) 
+rf_model = RandomForestClassifier(n_estimators=152, random_state=90)
 
 # Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
 
 # Train the Random Forest model on the training set
 rf_model.fit(X_train, y_train)
@@ -104,33 +106,37 @@ print(f"Model Accuracy: {accuracy * 100:.2f}%")
 
 # Plot feature importance
 feature_importances = rf_model.feature_importances_
-features = df.drop('HeartDisease', axis=1).columns
+features = df.drop("HeartDisease", axis=1).columns
 
 plt.figure(figsize=(12, 8))
-plt.barh(features, feature_importances, color='skyblue')
-plt.xlabel('Feature Importance')
-plt.title('Feature Importance in Random Forest Model')
+plt.barh(features, feature_importances, color="skyblue")
+plt.xlabel("Feature Importance")
+plt.title("Feature Importance in Random Forest Model")
 plt.show()
 
-new_data = pd.DataFrame({
-    'Age': [45],
-    'Sex': ['Male'],
-    'ChestPainType': ['ASY'],
-    'RestingBP': [130],
-    'Cholesterol': [233],
-    'FastingBS': [1],
-    'RestingECG': ['Normal'],
-    'MaxHR': [150],
-    'ExerciseAngina': ['N'],
-    'Oldpeak': [0.2],
-    'ST_Slope': ['Up']
-})
+new_data = pd.DataFrame(
+    {
+        "Age": [45],
+        "Sex": ["Male"],
+        "ChestPainType": ["ASY"],
+        "RestingBP": [130],
+        "Cholesterol": [233],
+        "FastingBS": [1],
+        "RestingECG": ["Normal"],
+        "MaxHR": [150],
+        "ExerciseAngina": ["N"],
+        "Oldpeak": [0.2],
+        "ST_Slope": ["Up"],
+    }
+)
 
 # Encode new data using the same label encoders
 for col in new_data.columns:
     if col in string_col:
         le = label_encoders[col]
-        new_data[col] = new_data[col].apply(lambda x: le.transform([x])[0] if x in le.classes_ else -1)
+        new_data[col] = new_data[col].apply(
+            lambda x: le.transform([x])[0] if x in le.classes_ else -1
+        )
 
 # Scale new data
 new_data_scaled = scaler.transform(new_data)
