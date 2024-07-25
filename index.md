@@ -93,8 +93,9 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 2. **Handling Categorical Variables:** We used One-hot encoding for categorical variables to avoid the distorting distance metric in KNN.
 ![OneHotEncoding](GitHub_Pages/Images/onehotencoding.png)
 
-3. **Reducing the Dimensions:** We ran PCA on the dataset to mitigate the impact of high dimensionality. The heatmap below visualizes how much each original feature contributes to the principal components, with higher absolute loadings representing more influence in principal components.
+3. **Reducing the Dimensions:** We ran PCA on the dataset to mitigate the impact of high dimensionality.
 ![PCA](GitHub_Pages/Images/PCA.png)
+The heatmap below visualizes how much each original feature contributes to the principal components, with higher absolute loadings representing more influence in principal components.
 ![PCAComponentLoadings](GitHub_Pages/Images/PCAcomponentloadings.png)
 <br>
 
