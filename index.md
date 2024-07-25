@@ -42,7 +42,7 @@ As illustrated, the data cleaning process significantly improved the dataset qua
 ## Methods
 1. **Supervised Methods:**
    - **Random Forest Classification (sklearn)** for highlighting important features and complex relationships.
-   - **KNN (scikit-learn)** for simple predictions based on similarity and visualization of the data.
+   - **K-Nearest Neighbors (scikit-learn)** for simple predictions based on similarity and visualization of the data.
    - **Neural Networks (pytorch)** for handling high-dimensional data with deep learning techniques for flexibility.
 2. **Data Preprocessing:**
    - **Dimensionality Reduction with PCA** to simplify data and remove redundant features.
@@ -86,7 +86,7 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 3. The prediction is done by passing in a new data for all the trees generated, and choosing the majority voting.
 <br>
 
-## 2nd Supervised Method: KNN Model ##
+## 2nd Supervised Method: K-Nearest Neighbors Model ##
 
 1. **Loading the Dataset:** We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
 
@@ -100,6 +100,21 @@ The heatmap below visualizes how much each original feature contributes to the p
 ![PCAComponentLoadings](GitHub_Pages/Images/PCAcomponentloadings.png)
 <br>
 
+**Model Training and Evaluation**
+
+K-Nearest Neighbors is a type of instance-based learning (also known as lazy learning), which has a different approach to training and prediction compared to other machine learning models.
+
+**Training in KNN:**
+
+* No Explicit Training Phase: KNN does not have a traditional training phase where the model parameters are learned from the data.
+* Storage of Training Data: The "training" in KNN essentially involves storing the entire training dataset. There are no weights or parameters to update.
+* Distance Computation: During prediction, KNN computes the distance between the query point and all points in the training dataset to find the k-nearest neighbors.
+
+**Prediction in KNN:**
+
+* Distance Calculation: For a given query point, KNN calculates the distance (commonly Euclidean distance) to all training points.
+* Neighbor Selection: It selects the k-nearest neighbors based on the smallest distances.
+* Majority Voting: In classification, KNN assigns the class that is most common among the k-nearest neighbors. In regression, it takes the average of the neighbors' values.
 
 ## Results/Discussion ##
 
