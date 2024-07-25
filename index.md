@@ -88,6 +88,12 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 
 ## 2nd Supervised Method: KNN Model ##
 
+1. **Loading the Dataset:** We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+
+2. **Handling Categorical Variables:** We used One-hot encoding for categorical variables to avoid the distorting distance metric in KNN.
+
+3. **Reducing the Dimensions:** We ran PCA on the dataset to mitigate the impact of high dimensionality.
+
 
 ## Results/Discussion ##
 
