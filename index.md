@@ -167,7 +167,7 @@ According to the graphs, we can conclude that in our Random Forest models, elimi
 <br>
 <br>
 
-**KNN**
+**K-Nearest Neighbors**
 
 We found the optimal hyper parameter k using cross-validation which gives us an unbiased estimate of the model's performance. Cross-validation is the average accuracy of the model on the validation folds during the cross-validation proces. This helps estimate the model's performance on unseen data.
 
@@ -179,7 +179,54 @@ While k = 23 gives us the optimal k value computed by using cross-validation, we
 
 ![NumberOfNeighborsVsAccuracy](GitHub_Pages/Images/NumNeighborsVsAccuracy.png)
 
+As shown in the plot, in some cases using other values of k besides k = 23 leads to having better test set accuracy.
+
+Generally if model performs well during cross-validation, it is expected to perform well on the test set because cross-validation helps mitigate overfitting. Higher test set accuracy indicates better generalization, but it is also possible for the test accuracy to differ from the cross-validation due to the nature of data splits.
+
+To elaborate, some possible explanations of why this is happening could be of the following reasons:
+1. Randomness in Data Splits: The specific split of the training and test data can lead to variations in accuracy.
+2. Overfitting: A model might overfit to the validation folds during cross-validation, resulting in slightly lower performance on the test set.
+3. Sample Size: With limited data, slight variations in the data splits can have a noticeable impact on performance metrics.
+
+Thus, the practical approach would be to choose a k value based on the cross-validation since it is a more reliable estimate of performance across different data splits. 
 <br>
+
+**Evaluation**
+The model achieved the following performance metrics:
+
+   | Class | Precision | Recall | F1-score | Support |
+   |-------|-----------|--------|----------|---------|
+   | 0     | 0.88      | 0.90   | 0.89     | 71      |
+   | 1     | 0.91      | 0.89   | 0.90     | 79      |
+   | **Accuracy**     |       |        | 0.89     | 150     |
+   | **Macro avg**    | 0.89  | 0.89   | 0.89     | 150     |
+   | **Weighted avg** | 0.89  | 0.89   | 0.89     | 150     |
+
+   **Model Accuracy:** 89%
+<br>
+
+The confusion matrix representing our precision, Recall, F1-score is as shown below:
+
+![Confusion Matrix](GitHub_Pages/Images/KNNconfusionmatrix.png)
+<br>
+
+The model demonstrates a high level of accuracy, indicating that it performs well in classifying instances correctly.
+The precision and recall values for both classes are high, indicating that the model is both accurate in its predictions and effective at identifying instances of each class.
+
+* **Class 0 Analysis:** The precision (88%) and recall (90%) for class 0 are both high, suggesting that the model is effective at correctly identifying instances of class 0 and minimizing false positives.
+
+* **Class 1 Analysis:** The precision (91%) and recall (89%) for class 1 are also high, indicating that the model accurately identifies instances of class 1 and has a low false-negative rate.
+    
+* **Confusion Matrix Insights:** The confusion matrix shows a balanced performance between the two classes, with slightly more false positives for class 0 (7) than false negatives for class 1 (9). The number of true positives is high for both classes, showing the model's effectiveness.
+<br>
+
+**Potential Improvements**
+Though the model performs rather well, further improvements could be made by increasing the size of the training data or exploring advanced techniques such as ensemble learning.
+<br>
+<br>
+<br>
+
+**Neural Networks**
 
 ## References
 [1] “FastStats,” Leading Causes of Death. https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm
