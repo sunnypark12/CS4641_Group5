@@ -126,11 +126,11 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
 
 2. **Data Preprocessing:** We preprocessed the data to prepare it for training the neural network, ensuring that our data is in correctly formatted and scaled for the neural network to learn effectively. This involves several steps:
 
-   1. **One-Hot Encode Categorical Features**: We use `OneHotEncoder` to convert categorical features into numerical values.
-   2. **Concatenate Numerical and Encoded Categorical Data**: We combine the numerical features with the one-hot encoded categorical features.
-   3. **Split Data into Training and Testing Sets**: We use `train_test_split` to split the data into training and testing sets.
-   4. **Standardize the Data**: We scale the features using `StandardScaler` to standardize the data.
-   5. **Convert Data to PyTorch Tensors**: Finally, we convert the NumPy arrays into PyTorch tensors, which are required for training the neural network.
+   1. **One-Hot Encoding Categorical Features**: We used `OneHotEncoder` to convert categorical features into numerical values.
+   2. **Concatenating Numerical and Encoded Categorical Data**: We combined the numerical features with the one-hot encoded categorical features.
+   3. **Splitting Data into Training and Testing Sets**: We used `train_test_split` to split the data into training and testing sets.
+   4. **Standardizing the Data**: We scaled the features using `StandardScaler` to standardize the data.
+   5. **Converting Data to PyTorch Tensors**: Finally, we converted the NumPy arrays into PyTorch tensors, which are required for training the neural network.
 ![NNPreprocessing](GitHub_Pages/Images/NNpreprocessing.png)
 
 3. **Defining the Neural Network:** Using the `SimpleNN` class in the PyTorch framework, we defined a simple feedforward neural network using the following steps:
@@ -145,12 +145,50 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
        * self.proj: A linear layer that projects the input features to the hidden size.
        * self.layers: A sequential container to hold multiple hidden layers. Each hidden layer consists of a linear transformation followed by an activation function (ReLU or Sigmoid).
        * self.output: A linear layer that projects the hidden layer output to the number of classes (2 in this case, for binary classification).
-   4. **The forward method**: The forward method defines how the input data passes through the network
+   4. **The Forward Method**: The forward method defines how the input data passes through the network
        * Projection: The input x is first passed through the projection layer (self.proj).
        * Hidden Layers: The projected input is then passed through the sequential container of hidden layers (self.layers).
        * Output Layer: Finally, the output from the hidden layers is passed through the output layer (self.output) to produce the final logits for classification.
 ![SimpleNNClass](GitHub_Pages/Images/simpleNNclass.png)
+<br>
 
+**Model Training and Evaluation**
+
+The train_model function is designed to train a neural network model with specified hyperparameters and return the training and validation losses and accuracies over epochs. **It also includes early stopping to prevent overfitting**.
+
+**Initialization**
+
+1. **Model Initialization:**
+   * The model is initialized with the given input_size, num_layers, hidden_size, and activation function.
+   * The model is moved to the specified device (CPU or GPU).
+3. **Optimizer and Loss Function:**
+   * The Adam optimizer is used with a learning rate specified in the hyperparameters.
+   * The loss function used is nn.CrossEntropyLoss(), which is suitable for classification tasks.
+   * The adam optimizer is used to optimize the internal parameters (weights and biases) of the neural network during the learning process.
+4. **Data Loaders:**
+   * The training and testing datasets are loaded into DataLoaders with the specified batch size for efficient batch processing during training and evaluation.
+5. **Tracking Variables:**
+   * Lists to store training and validation losses and accuracies for each epoch.
+   * Variables for early stopping: best_test_loss to track the best validation loss and patience_counter to count the number of epochs without improvement.
+
+**Training Loop**
+
+1. **Epoch Loop:**
+    * The model is set to training mode using model.train().
+    * The running loss and correct predictions are tracked for each batch in the training set.
+    * The optimizer is zeroed, the model performs a forward pass, the loss is calculated and backpropagated, and the optimizer steps to update the model weights.
+    * Training loss and accuracy are calculated and appended to their respective lists.
+2. **Validation Loop:**
+    * The model is set to evaluation mode using model.eval().
+    * The loss and correct predictions are tracked for each batch in the validation set.
+    * Validation loss and accuracy are calculated and appended to their respective lists.
+3. **Early Stopping:**
+    * If the current validation loss is better than the best validation loss minus a specified delta, the best validation loss is updated, and the patience counter is reset.
+    * If no improvement is seen for a number of epochs equal to params['patience'], training stops early.
+  
+**Return Values**
+
+The function returns the training and validation losses and accuracies over epochs, and the trained model.
 
 ## Results/Discussion ##
 
