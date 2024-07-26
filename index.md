@@ -359,6 +359,30 @@ The final model achieves a high validation accuracy of around 90%, indicating st
 <br>The use of early stopping, appropriate activation functions, and hyperparameter tuning helped mitigate overfitting and ensured the model remained robust.
 <br>
 
+
+# Comparison of Models #
+Here is a comparison of the three supervised learning models we used in terms of various performance metrics:
+
+## Evaluation Metrics ##
+The table below shows the performance of each model in terms of accuracy, precision, recall, and F1-score:
+
+| Model                 | Accuracy | Precision | Recall | F1-Score |
+|-----------------------|----------|-----------|--------|----------|
+| Random Forest         | 89.33%   | 0.84      | 0.96   | 0.89     |
+| K-Nearest Neighbors   | 89%      | 0.88      | 0.90   | 0.89     |
+| Neural Network        | 88.39%   | -         | -      | -        |
+
+### Confusion Matrix Insights ###
+- **Random Forest:** Demonstrated a high recall for detecting heart disease, indicating its effectiveness in identifying positive cases.
+- **K-Nearest Neighbors:** Showed balanced performance with high precision and recall for both classes.
+- **Neural Network:** Achieved a high validation accuracy of around 90% and generalization performance, with early stopping to prevent overfitting.
+
+### Conclusion ###
+All three models performed well in predicting heart disease, with slight variations in their performance metrics. The Random Forest model achieved the highest accuracy and recall, making it the most effective at identifying individuals with heart disease. The K-Nearest Neighbors model showed balanced performance across precision, recall, and F1-score, indicating its reliability. The Neural Network model also performed strongly, with effective mitigation of overfitting and robust generalization.
+
+**Final Remarks:** 
+The Random Forest model, with its highest accuracy and recall, is recommended for this specific task of heart disease prediction. However, the K-Nearest Neighbors and Neural Network models also provide valuable insights and could be further optimized for improved performance.
+
 ## References
 [1] “FastStats,” Leading Causes of Death. https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm
 
