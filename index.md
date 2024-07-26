@@ -168,6 +168,10 @@ According to the graphs, we can conclude that in our Random Forest models, elimi
 
 **KNN**
 
+We found the optimal hyper parameter k using cross-validation which gives us an unbiased estimate of the model's performance. Cross-validation is the average accuracy of the model on the validation folds during the cross-validation proces. This helps estimate the model's perforamnce on unseen data.
+![OptimalK](/GitHub_Pages/Images/KNNoptimalK.png)
+
+From the graph we can conclude that k = 23 is the optimal number of neighbors.
 
 <br>
 
