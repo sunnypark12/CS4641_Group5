@@ -87,18 +87,10 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 
 ## Supervised Method 2: K-Nearest Neighbors Model ##
 
-1. **Loading the Dataset:**
-
-We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
-
-2. **Handling Categorical Variables:**
-
-We used One-hot encoding for categorical variables to avoid the distorting distance metric in KNN.
+1. **Loading the Dataset:** <br> We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+2. **Handling Categorical Variables:** <br> We used One-hot encoding for categorical variables to avoid the distorting distance metric in KNN.
 ![OneHotEncoding](GitHub_Pages/Images/onehotencoding.png)
-
-3. **Reducing the Dimensions:**
-
-We ran PCA on the dataset to mitigate the impact of high dimensionality.
+3. **Reducing the Dimensions:** <br> We ran PCA on the dataset to mitigate the impact of high dimensionality.
 ![PCA](GitHub_Pages/Images/PCA.png)
 
 The heatmap below visualizes how much each original feature contributes to the principal components, with higher absolute loadings representing more influence in principal components.
@@ -126,9 +118,9 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
 
 ## Supervised Method 3: Neural Network ##
 
-1. **Loading the Dataset:** We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+1. **Loading the Dataset:** <br> We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
 
-2. **Data Preprocessing:** We preprocessed the data to prepare it for training the neural network, ensuring that our data is in correctly formatted and scaled for the neural network to learn effectively. This involves several steps:
+2. **Data Preprocessing:** <br> We preprocessed the data to prepare it for training the neural network, ensuring that our data is in correctly formatted and scaled for the neural network to learn effectively. This involves several steps:
 
    1. **One-Hot Encoding Categorical Features**
       We used `OneHotEncoder` to convert categorical features into numerical values.
@@ -142,8 +134,18 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
       Finally, we converted the NumPy arrays into PyTorch tensors, which are required for training the neural network.
       
 ![NNPreprocessing](GitHub_Pages/Images/NNpreprocessing.png)
+<br>
 
-3. **Defining the Neural Network:** Using the `SimpleNN` class in the PyTorch framework, we defined a simple feedforward neural network using the following steps:
+**Understanding the Structure of Training Data: Visualization Using PCA** <br>
+Though we didn't use PCA during training, the visualization of training data with PCA provided better understanding of the data structure and insights on separability of classes. We found out reducing our training data to a 2D projection would be effective in having better interpretation. 
+![PCA_NN](GitHub_Pages/Images/PCA_NN.png)
+
+- Class Separation: Two classes(0 and 1) shown in different colors have noticeable but not complete separation, indicating a positive sign of classification in that the classes are somewhat distinguishable.
+- Cluster Density: The density of points for each class varies across the plot, but there are regions where the two classes overlap significantly, which could lead to some misclassifications.
+- Principal Components: The first principal component (PC1) seems to capture more variance as there is more spread along the x-axis compared to the y-axis (PC2).
+- Implications for Model Training: The overlap between classes indicates that while some regions of the feature space are well-separated, others are not; thus suggesting that a more complex model might be needed to capture the nuances in the data.
+
+3. **Defining the Neural Network:** <br> Using the `SimpleNN` class in the PyTorch framework, we defined a simple feedforward neural network using the following steps:
 
    1. **Initialization**: (__init__ method)
    2. **Input Parameters**:
@@ -166,7 +168,7 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
 
 The train_model function is designed to train a neural network model with specified hyperparameters and return the training and validation losses and accuracies over epochs. **The function also includes early stopping to prevent overfitting**.
 
-**Initialization**
+**1. Initialization**
 
 1. **Model Initialization:**
    * The model is initialized with the given input_size, num_layers, hidden_size, and activation function, and then moved to the specified device (CPU or GPU).
@@ -180,7 +182,7 @@ The train_model function is designed to train a neural network model with specif
    * Lists to store training and validation losses and accuracies for each epoch.
    * Variables for early stopping: best_test_loss to track the best validation loss and patience_counter to count the number of epochs without improvement.
 
-**Training Loop**
+**2. Training Loop**
 
 1. **Epoch Loop:**
     * The model is set to training mode using model.train().
@@ -195,19 +197,42 @@ The train_model function is designed to train a neural network model with specif
     * If the current validation loss is better than the previous best validation loss minus a specified delta, the best validation loss is updated, and the patience counter is reset.
     * If no improvement is seen for a number of epochs equal to params['patience'], training stops early.
   
-**Return Values**
+**3. Return Values**
 
 The function returns the training and validation losses and accuracies over epochs, and the trained model.
 
 ![NNTraining](GitHub_Pages/Images/NNtraining.png)
 <br>
+
+**4. Hyperparameter Tuning**
+
+In the context of neural networks, hyperparameter tuning can be resource-intensive due to the computational demands of training these models. Cross-validation, although highly effective for many machine learning models, is less practical for neural networks because training these models is typically very time-consuming.
+
+Thus, we used combination of grid search and early stopping for hyperparameter tuning:
+- Grid Search: Trying out combinations of different hyperparameters
+- Early Stopping: Monitoring validation loss and stopping training when performance ceases to improve to avoid overfitting
+
+<br>
+
+**Hyperparameters**
+1. num_layers (Number of Layers): Number of hidden layers in the neural network<br>More layers can potentially capture more complex patterns in the data but can also lead to overfitting. Increasing the number of layers might improve performance up to a certain point, beyond which the model might overfit.
+2. hidden_size (Number of Neurons per Layer): Number of neurons in each hidden layer<br>More neurons can increase the model's capacity to learn from data but can also lead to overfitting. Increasing the number of neurons may improve performance up to a point, after which it could lead to overfitting.
+3. activation (Activation Function): Introduces non-linearity into the model, enabling it to learn complex patterns<br>ReLU might perform better for deeper networks as it mitigates the vanishing gradient problem while Sigmoid might be useful for shallower networks or specific tasks where its output range is more appropriate.
+4. learning_rate (Learning Rate): Controls how much the model's weights are adjusted with respect to the loss gradient during training<br> Lower learning rate might lead to more stable convergence but may require more epochs to train while higher learning rate might speed up training but could cause the model to miss the optimal solution.
+5. batch_size (Batch Size): Number of samples processed before the model's internal parameters are updated<br>Smaller batch sizes can lead to noisier updates but more frequent adjustments while larger batch sizes can make training more stable but might lead to overfitting.
+6. epochs (Number of Epochs): Number of complete passes through the training dataset<br>More epochs generally improve performance up to a point, after which the model might start overfitting.
+7. patience: Number of epochs with no improvement after which training will be stopped
+8. delta: minimum change in the monitored quantity to qualify as an improvement.
+
+![Hyperparameter](GitHub_Pages/Images/Hyperparam.png)
+<br>
 <br>
 
 ## Results/Discussion ##
 
-**Random Forest Classification**
+**1. Random Forest Classification**
 
-By creating a heatmap, we were able to determine the optimal hyperparameters for our Random Forest model: **100 Random Decision Trees(N_estimator)**
+By creating a heatmap, we could determine optimal hyperparameters for Random Forest model: **100 Random Decision Trees(N_estimator)**
 
 ![Heatmap](GitHub_Pages/Images/hyperparameter_heatmap.png)
 <br>
@@ -253,7 +278,7 @@ According to the graphs, we can conclude that in our Random Forest models, elimi
 <br>
 <br>
 
-**K-Nearest Neighbors**
+**2. K-Nearest Neighbors**
 
 We found the optimal hyper parameter k using cross-validation which gives us an unbiased estimate of the model's performance. Cross-validation is the average accuracy of the model on the validation folds during the cross-validation proces. This helps estimate the model's performance on unseen data.
 
@@ -309,10 +334,35 @@ The precision and recall values for both classes are high, indicating that the m
 **Potential Improvements**
 Though the model performs rather well, further improvements could be made by increasing the size of the training data or exploring advanced techniques such as ensemble learning.
 <br>
-<br>
-<br>
 
 **Neural Network**
+The final performance of our neural network model was evaluated using the best hyperparameters identified through an extensive hyperparameter tuning process. The training, validation, and testing losses and accuracies were monitored and plotted over the course of 25 epochs.
+
+**1. Hyperparameter Tuning Results**<br>![Hyperparameter Tuning Results](GitHub_Pages/Images/hyperResult.png)<br>Best Parameters: {'num_layers': 12, 'hidden_size': 256, 'activation': 'ReLU', 'learning_rate': 0.001, 'batch_size': 16, 'epochs': 50, 'val_accuracy': 0.9107142857142857, 'delta': 0.001, 'patience': 5}
+**2. Training, Validation, Testing Loss**<br>Early stopping triggered at epoch 10<br>Test Accuracy: 0.8839<br>![NNLoss](GitHub_Pages/Images/NNLoss.png)
+
+**Plot Above** displays the training, validation, and testing losses across 25 epochs:<br>
+1. Initial Phase:<br>Training, validation, and testing losses start relatively high but are closely aligned, indicating that the model begins with a similar level of error on all datasets.
+2. Mid Training Phase:<br>There is a notable decrease in training and validation losses, while the testing loss also shows improvement. This indicates that the model is starting to learn and generalize well on unseen data.
+3. Convergence Phase:<br>Around the 10th epoch, there is a significant convergence of training, validation, and testing losses. This suggests that the model has effectively captured the underlying patterns in the data.
+4. Final Phase:<br>By the 25th epoch, all losses continue to show a decreasing trend, with the validation and testing losses aligning closely with the training loss. This is a good indication that the model generalizes well to the validation and testing data and is not overfitting.
+
+**Plot Below** displays the training, validation, and testing accuracies over the same epochs:<br>
+1. Initial Phase:<br>The accuracies start lower but improve significantly in the first few epochs.
+2. Mid Training Phase:<br>There is a steady increase in accuracies, with validation and testing accuracies showing alignment, indicating that the model is generalizing well.
+3. Convergence Phase:<br>The training accuracy continues to improve, while validation and testing accuracies remain stable, suggesting a balanced learning process.
+4. Final Phase:<br>The training, validation, and testing accuracies stabilize, indicating that the model has learned the patterns well and is performing consistently across all datasets.
+
+**Early Stopping**
+Early stopping criteria were employed during training to prevent overfitting. The model was set to stop training if there was no significant improvement in validation loss for a certain number of epochs (patience). In this case, early stopping was not triggered, suggesting that the model continued to learn effectively up to the final epoch.
+
+**Model Performance:**
+<br>
+The final model achieves a high validation accuracy of around 90%, indicating strong generalization performance.
+<br>
+**Overfitting Mitigation:** 
+<br>The use of early stopping, appropriate activation functions, and hyperparameter tuning helped mitigate overfitting and ensured the model remained robust.
+<br>
 
 ## References
 [1] “FastStats,” Leading Causes of Death. https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm
