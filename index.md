@@ -341,7 +341,7 @@ Though the model performs rather well, further improvements could be made by inc
   </tr>
   <tr>
     <td style="text-align:center">Shayahn</td>
-    <td style="text-align:center">Neural Network Implementation and Visual Analysis, GitHub Documentation</td>
+    <td style="text-align:center">Neural Network Implementation and Visual Analysis, Model Comparisons, GitHub Documentation</td>
   </tr>
   <tr>
     <td style="text-align:center">Joshua</td>
