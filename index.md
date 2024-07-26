@@ -211,7 +211,7 @@ Thus, we used combination of grid search and early stopping for hyperparameter t
 **1. num_layers (Number of Layers):** <br>More layers can potentially capture more complex patterns in the data but can also lead to overfitting. Increasing the number of layers might improve performance up to a certain point, beyond which the model might overfit.<br><br>
 **2. hidden_size (Number of Neurons per Layer):** <br>More neurons can increase the model's capacity to learn from data but can also lead to overfitting. Increasing the number of neurons may improve performance up to a point, after which it could lead to overfitting.<br><br>
 **3. activation (Activation Function):** <br>ReLU might perform better for deeper networks as it mitigates the vanishing gradient problem while Sigmoid might be useful for shallower networks or specific tasks where its output range is more appropriate.<br><br>
-**4. learning_rate (Learning Rate):** <br>Lower learning rate might lead to more stable convergence but may require more epochs to train while higher learning rate might speed up training but could cause the model to miss the optimal solution.<br>
+**4. learning_rate (Learning Rate):** <br>Lower learning rate might lead to more stable convergence but may require more epochs to train while higher learning rate might speed up training but could cause the model to miss the optimal solution.<br><br>
 **5. batch_size (Batch Size):** <br>Smaller batch sizes can lead to noisier updates but more frequent adjustments while larger batch sizes can make training more stable but might lead to overfitting.<br><br>
 **6. epochs (Number of Epochs):** <br>More epochs generally improve performance up to a point, after which the model might start overfitting.<br><br>
 **7. patience:** <br>fixed values not to be tuned<br><br>
@@ -420,7 +420,7 @@ The Random Forest model, with its highest accuracy and recall, is recommended fo
   </tr>
   <tr>
     <td style="text-align:center">Joshua</td>
-    <td style="text-align:center"></td>
+    <td style="text-align:center">Dataset discovery and validation, Initial PCA and Random Forest Implementation, NN Model Analysis, Final Presentation</td>
   </tr>
 </table>
 
