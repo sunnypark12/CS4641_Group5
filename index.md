@@ -85,6 +85,7 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 2. While we don't use all the features for training the trees, we randomly select subset of features and use only those selected for training.
 3. The prediction is done by passing in a new data for all the trees generated, and choosing the majority voting.
 <br>
+<br>
 
 ## 2nd Supervised Method: K-Nearest Neighbors Model ##
 
@@ -116,6 +117,22 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
 * Distance Calculation: For a given query point, KNN calculates the distance (commonly Euclidean distance) to all training points.
 * Neighbor Selection: It selects the k-nearest neighbors based on the smallest distances.
 * Majority Voting: In classification, KNN assigns the class that is most common among the k-nearest neighbors. In regression, it takes the average of the neighbors' values.
+<br>
+<br>
+
+## 3rd Supervised Method: Neural Networks ##
+
+1. **Loading the Dataset:** We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+
+2. **Data Preprocessing:** We preprocessed the data to prepare it for training the neural network, ensuring that our data is in correctly formatted and scaled for the neural network to learn effectively. This involves several steps:
+
+   1. **One-Hot Encode Categorical Features**: We use `OneHotEncoder` to convert categorical features into numerical values.
+   2. **Concatenate Numerical and Encoded Categorical Data**: We combine the numerical features with the one-hot encoded categorical features.
+   3. **Split Data into Training and Testing Sets**: We use `train_test_split` to split the data into training and testing sets.
+   4. **Standardize the Data**: We scale the features using `StandardScaler` to standardize the data.
+   5. **Convert Data to PyTorch Tensors**: Finally, we convert the NumPy arrays into PyTorch tensors, which are required for training the neural network.
+![NNPreprocessing](GitHub_Pages/Images/NNpreprocessing.png)
+
 
 ## Results/Discussion ##
 
