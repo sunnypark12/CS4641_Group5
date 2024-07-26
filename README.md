@@ -14,7 +14,7 @@ The project is structured into various directories for data preprocessing, analy
      - **/Preprocessing/cleaning.py**: Script for cleaning missing values from the dataset
 - **/SupervisedLearning/**: Implementation of supervised learning algorithms.
      - **/SupervisedLearning/randomforest.py**: Script implementing the random forest model using provided dataset
-     - **/SupervisedLearning/randomforest.ipynb**: Jupyter notebook containing code for random forest model and visualizations and quantitative metrics representing model output
+     - **/SupervisedLearning/randomforest_cleaned.ipynb**: Jupyter notebook containing code for random forest model and visualizations and quantitative metrics representing model output
      - **/SupervisedLearning/KNN_jupyter.ipynb**: Jupyter notebook containing code for implemented K-Nearest Neighbors model, visualizations and plotting, and quantitative metrics representing model output
      - **/SupervisedLearning/NeuralNetworkModified.ipynb**: Jupyter notebook containing code for implemented Neural Network model, visualizations and plotting, and quantitative metrics representing model output
 - **/index.md**: GitHub Page detailing all progress of the project in the form of a report
