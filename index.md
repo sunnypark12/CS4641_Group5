@@ -1,4 +1,4 @@
-## CS4641_Group5
+# CS4641_Group5
 Patcharapong Aphiwetsa, SeungTaek(Stan) Lee, Shayahn Mirfendereski, Sunho(Sunny) Park, Joshua K Thomas
 
 ## Introduction/Background
