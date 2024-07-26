@@ -20,7 +20,7 @@ Despite significant advances in medical technology, accurately predicting heart 
 Our group decided to utilize the first dataset we found from Kaggle, the _Heart Failure Prediction Dataset_. The dataset contained some missing values and inconsistencies that needed to be addressed before we could proceed with our analysis. Here, we describe the steps we took to clean the dataset and provide a comparison of the dataset before and after cleaning.
 <br>
 
-**Cleaning Proces: Handling Missing Values**:
+**Cleaning Process: Handling Missing Values**
    - We identified that the dataset had several missing values, particularly in the `RestingBP` and `Cholesterol` columns. These missing values were addressed by removing rows with zero values in these columns to ensure the accuracy and integrity of our data.
 <br>
 
@@ -50,18 +50,29 @@ As illustrated, the data cleaning process significantly improved the dataset qua
 <br>
 <br>
 
-## 1st Supervised Method: Random Forest Model ##
+## Supervised Method 1: Random Forest Model ##
 
-1. **Loading the Dataset:** We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+1. **Loading the Dataset:**
 
-2. **Handling Categorical Variables:** We used label encoding for categorical variables, as it is suitable for tree-based algorithms like Random Forest.
+We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+
+2. **Handling Categorical Variables:**
+
+We used label encoding for categorical variables, as it is suitable for tree-based algorithms like Random Forest.
 ![LabelEncoding](GitHub_Pages/Images/LabelEncoding.png)
 
-3. **Scaling Features:** Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
+3. **Scaling Features:**
+
+Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
 ![ScaleData](GitHub_Pages/Images/ScaleData.png)
 <br>
 
 **Model Training and Evaluation**
+
+For Random Forest Model, we go through the following steps for training and prediction:
+1. Build new data set from original data : randomly select the data while keeping the same number of rows with the original data set.
+2. While we don't use all the features for training the trees, we randomly select subset of features and use only those selected for training.
+3. The prediction is done by passing in a new data for all the trees generated, and choosing the majority voting.
 
 We used Stratified K-Fold cross-validation to estimate the performance of our model. 
 
@@ -79,22 +90,23 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 
   Considering that ROC-AUC Score is approximated to 92%, we could say that our model has admissible performance.
 <br>
-
-**Random Forest Model**
-1. Build new data set from original data : randomly select the data while keeping the same number of rows with the original data set.
-2. While we don't use all the features for training the trees, we randomly select subset of features and use only those selected for training.
-3. The prediction is done by passing in a new data for all the trees generated, and choosing the majority voting.
 <br>
 <br>
 
-## 2nd Supervised Method: K-Nearest Neighbors Model ##
+## Supervised Method 2: K-Nearest Neighbors Model ##
 
-1. **Loading the Dataset:** We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+1. **Loading the Dataset:**
 
-2. **Handling Categorical Variables:** We used One-hot encoding for categorical variables to avoid the distorting distance metric in KNN.
+We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+
+2. **Handling Categorical Variables:**
+
+We used One-hot encoding for categorical variables to avoid the distorting distance metric in KNN.
 ![OneHotEncoding](GitHub_Pages/Images/onehotencoding.png)
 
-3. **Reducing the Dimensions:** We ran PCA on the dataset to mitigate the impact of high dimensionality.
+3. **Reducing the Dimensions:**
+
+We ran PCA on the dataset to mitigate the impact of high dimensionality.
 ![PCA](GitHub_Pages/Images/PCA.png)
 
 The heatmap below visualizes how much each original feature contributes to the principal components, with higher absolute loadings representing more influence in principal components.
@@ -120,35 +132,41 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
 <br>
 <br>
 
-## 3rd Supervised Method: Neural Network ##
+## Supervised Method 3: Neural Network ##
 
 1. **Loading the Dataset:** We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
 
 2. **Data Preprocessing:** We preprocessed the data to prepare it for training the neural network, ensuring that our data is in correctly formatted and scaled for the neural network to learn effectively. This involves several steps:
 
-   1. **One-Hot Encoding Categorical Features**: We used `OneHotEncoder` to convert categorical features into numerical values.
-   2. **Concatenating Numerical and Encoded Categorical Data**: We combined the numerical features with the one-hot encoded categorical features.
-   3. **Splitting Data into Training and Testing Sets**: We used `train_test_split` to split the data into training and testing sets.
-   4. **Standardizing the Data**: We scaled the features using `StandardScaler` to standardize the data.
-   5. **Converting Data to PyTorch Tensors**: Finally, we converted the NumPy arrays into PyTorch tensors, which are required for training the neural network.
+   1. **One-Hot Encoding Categorical Features**
+      We used `OneHotEncoder` to convert categorical features into numerical values.
+   2. **Concatenating Numerical and Encoded Categorical Data**
+      We combined the numerical features with the one-hot encoded categorical features.
+   3. **Splitting Data into Training and Testing Sets**
+      We used `train_test_split` to split the data into training and testing sets.
+   4. **Standardizing the Data**
+      We scaled the features using `StandardScaler` to standardize the data.
+   5. **Converting Data to PyTorch Tensors**
+      Finally, we converted the NumPy arrays into PyTorch tensors, which are required for training the neural network.
+      
 ![NNPreprocessing](GitHub_Pages/Images/NNpreprocessing.png)
 
 3. **Defining the Neural Network:** Using the `SimpleNN` class in the PyTorch framework, we defined a simple feedforward neural network using the following steps:
 
-   1. **Initialization (__init__ method)**
+   1. **Initialization**: (__init__ method)
    2. **Input Parameters**:
-       * input_size: The number of input features.
-       * num_layers: The number of hidden layers.
-       * hidden_size: The number of neurons in each hidden layer.
-       * function: The activation function to use ('ReLU' or 'Sigmoid').
+       * input_size: The number of input features
+       * num_layers: The number of hidden layers
+       * hidden_size: The number of neurons in each hidden layer
+       * function: The activation function to use ('ReLU' or 'Sigmoid')
    3. **Network Layers**:
-       * self.proj: A linear layer that projects the input features to the hidden size.
-       * self.layers: A sequential container to hold multiple hidden layers. Each hidden layer consists of a linear transformation followed by an activation function (ReLU or Sigmoid).
-       * self.output: A linear layer that projects the hidden layer output to the number of classes (2 in this case, for binary classification).
+       * self.proj: A linear layer that projects the input features to the hidden size
+       * self.layers: A sequential container to hold multiple hidden layers. Each hidden layer consists of a linear transformation followed by an activation function (ReLU or Sigmoid)
+       * self.output: A linear layer that projects the hidden layer output to the number of classes (2 in this case, for binary classification)
    4. **The Forward Method**: The forward method defines how the input data passes through the network
-       * Projection: The input x is first passed through the projection layer (self.proj).
-       * Hidden Layers: The projected input is then passed through the sequential container of hidden layers (self.layers).
-       * Output Layer: Finally, the output from the hidden layers is passed through the output layer (self.output) to produce the final logits for classification.
+       * Projection: The input x is first passed through the projection layer (self.proj)
+       * Hidden Layers: The projected input is then passed through the sequential container of hidden layers (self.layers)
+       * Output Layer: Finally, the output from the hidden layers is passed through the output layer (self.output) to produce the final logits for classification
 ![SimpleNNClass](GitHub_Pages/Images/simpleNNclass.png)
 <br>
 
