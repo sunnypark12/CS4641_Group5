@@ -97,6 +97,7 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 ![PCA](GitHub_Pages/Images/PCA.png)
 
 The heatmap below visualizes how much each original feature contributes to the principal components, with higher absolute loadings representing more influence in principal components.
+
 ![PCAComponentLoadings](GitHub_Pages/Images/PCAcomponentloadings.png)
 <br>
 
@@ -168,10 +169,15 @@ According to the graphs, we can conclude that in our Random Forest models, elimi
 
 **KNN**
 
-We found the optimal hyper parameter k using cross-validation which gives us an unbiased estimate of the model's performance. Cross-validation is the average accuracy of the model on the validation folds during the cross-validation proces. This helps estimate the model's perforamnce on unseen data.
+We found the optimal hyper parameter k using cross-validation which gives us an unbiased estimate of the model's performance. Cross-validation is the average accuracy of the model on the validation folds during the cross-validation proces. This helps estimate the model's performance on unseen data.
+
 ![OptimalK](/GitHub_Pages/Images/KNNoptimalK.png)
 
 From the graph we can conclude that k = 23 is the optimal number of neighbors.
+
+While k = 23 gives us the optimal k value computed by using cross-validation, we found out that using different k values sometimes gives us better test accuracies. We explored this phenomenon by evaluating the model accuracy through testing with different k values ranging from 1 to 30.
+
+![NumberOfNeighborsVsAccuracy](GitHub_Pages/Images/NumNeighborsVsAccuracy.png)
 
 <br>
 
