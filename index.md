@@ -132,9 +132,6 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
       We scaled the features using `StandardScaler` to standardize the data.
    5. **Converting Data to PyTorch Tensors**
       Finally, we converted the NumPy arrays into PyTorch tensors, which are required for training the neural network.
-         
-   ![NNPreprocessing](GitHub_Pages/Images/NNpreprocessing.png)
-   <br>
    
    **Understanding the Structure of Training Data: Visualization Using PCA** <br>
    Though we didn't use PCA during training, the visualization of training data with PCA provided better understanding of the data structure and insights on separability of classes. We found out reducing our training data to a 2D projection would be effective in having better interpretation.
@@ -162,7 +159,6 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
        * Projection: The input x is first passed through the projection layer (self.proj)
        * Hidden Layers: The projected input is then passed through the sequential container of hidden layers (self.layers)
        * Output Layer: Finally, the output from the hidden layers is passed through the output layer (self.output) to produce the final logits for classification
-![SimpleNNClass](GitHub_Pages/Images/simpleNNclass.png)
 <br>
 
 ### Model Training and Evaluation ###
@@ -201,8 +197,6 @@ The train_model function is designed to train a neural network model with specif
 #### 3. Return Values ####
 
 The function returns the training and validation losses and accuracies over epochs, and the trained model.
-
-![NNTraining](GitHub_Pages/Images/NNtraining.png)
 <br>
 
 #### 4. Hyperparameter Tuning ####
