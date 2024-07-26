@@ -330,27 +330,23 @@ The final performance of our neural network model was evaluated using the best h
 **1. Hyperparameter Tuning Results**<br>![Hyperparameter Tuning Results](GitHub_Pages/Images/hyperResult.png)<br>Best Parameters: 'num_layers': 12, 'hidden_size': 256, 'activation': 'ReLU', 'learning_rate': 0.001, 'batch_size': 16, 'epochs': 50, 'val_accuracy': 0.9107142857142857, 'delta': 0.001, 'patience': 5<br><br>
 **2. Training, Validation, Testing Loss**<br>Early stopping triggered at epoch 10<br>Test Accuracy: 0.8839<br>![NNLoss](GitHub_Pages/Images/NNLoss.png)
 
-**Plot Above** displays the training, validation, and testing losses across 25 epochs:<br>
-1. Initial Phase:<br>Training, validation, and testing losses start relatively high but are closely aligned, indicating that the model begins with a similar level of error on all datasets.
-2. Mid Training Phase:<br>There is a notable decrease in training and validation losses, while the testing loss also shows improvement. This indicates that the model is starting to learn and generalize well on unseen data.
-3. Convergence Phase:<br>Around the 10th epoch, there is a significant convergence of training, validation, and testing losses. This suggests that the model has effectively captured the underlying patterns in the data.
-4. Final Phase:<br>By the 25th epoch, all losses continue to show a decreasing trend, with the validation and testing losses aligning closely with the training loss. This is a good indication that the model generalizes well to the validation and testing data and is not overfitting.
+**Plot Above** displays the training, validation, and testing losses across 10 epochs due to early stopping:<br>
+1. Early and Mid Phases (Epochs 1-7)::<br>The training, validation, and testing losses all decrease, indicating that the model is learning effectively. The validation and testing losses decrease at a similar rate to the training loss, suggesting good generalization during these phases.
+4. Later Phases (Epochs 8-10)::<br>The validation and testing losses start to increase, while the training loss continues to decrease slightly. This divergence is a classic sign of overfitting, where the model starts to memorize the training data rather than generalizing to unseen data.
 
 **Plot Below** displays the training, validation, and testing accuracies over the same epochs:<br>
-1. Initial Phase:<br>The accuracies start lower but improve significantly in the first few epochs.
-2. Mid Training Phase:<br>There is a steady increase in accuracies, with validation and testing accuracies showing alignment, indicating that the model is generalizing well.
-3. Convergence Phase:<br>The training accuracy continues to improve, while validation and testing accuracies remain stable, suggesting a balanced learning process.
-4. Final Phase:<br>The training, validation, and testing accuracies stabilize, indicating that the model has learned the patterns well and is performing consistently across all datasets.
+1. Early and Mid Phases (Epochs 1-7):<br>Training, validation, and testing accuracies increase significantly, with all three metrics following a similar trend. This indicates that the model is improving its performance on both seen (training) and unseen (validation and testing) data.
+4. Later Phases (Epochs 8-10):<br> The training accuracy remains high and stable. The validation and testing accuracies show slight fluctuations and do not improve further. In fact, they start to diverge from the training accuracy, suggesting that the model is beginning to overfit.
 
 #### Early Stopping ####
-Early stopping criteria were employed during training to prevent overfitting. The model was set to stop training if there was no significant improvement in validation loss for a certain number of epochs (patience). In this case, early stopping was not triggered, suggesting that the model continued to learn effectively up to the final epoch.
+Early stopping criteria were employed during training to prevent overfitting. The model was set to stop training if there was no significant improvement in validation loss for a certain number of epochs (patience: 5).
 
 #### Model Performance: ####
 The final model achieves a high validation accuracy of around 90%, indicating strong generalization performance.
 <br>
 
 #### Overfitting Mitigation: #### 
-The use of early stopping, appropriate activation functions, and hyperparameter tuning helped mitigate overfitting and ensured the model remained robust.
+The use of early stopping, appropriate activation functions, and hyperparameter tuning helped mitigate overfitting and ensured the model remained robust. We can conclude that to mitigate overfitting our model should conduct early stopping around epoch 7.
 <br>
 
 
