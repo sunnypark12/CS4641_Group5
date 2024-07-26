@@ -43,7 +43,7 @@ As illustrated, the data cleaning process significantly improved the dataset qua
 1. **Supervised Methods:**
    - **Random Forest Classification (sklearn)** for highlighting important features and complex relationships.
    - **K-Nearest Neighbors (scikit-learn)** for simple predictions based on similarity and visualization of the data.
-   - **Neural Networks (pytorch)** for handling high-dimensional data with deep learning techniques for flexibility.
+   - **Neural Network (pytorch)** for handling high-dimensional data with deep learning techniques for flexibility.
 2. **Data Preprocessing:**
    - **Dimensionality Reduction with PCA** to simplify data and remove redundant features.
    - **Fill in missing data (pandas)**
@@ -120,7 +120,7 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
 <br>
 <br>
 
-## 3rd Supervised Method: Neural Networks ##
+## 3rd Supervised Method: Neural Network ##
 
 1. **Loading the Dataset:** We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
 
@@ -132,6 +132,24 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
    4. **Standardize the Data**: We scale the features using `StandardScaler` to standardize the data.
    5. **Convert Data to PyTorch Tensors**: Finally, we convert the NumPy arrays into PyTorch tensors, which are required for training the neural network.
 ![NNPreprocessing](GitHub_Pages/Images/NNpreprocessing.png)
+
+3. **Defining the Neural Network:** Using the `SimpleNN` class in the PyTorch framework, we defined a simple feedforward neural network using the following steps:
+
+   1. **Initialization (__init__ method)**
+   2. **Input Parameters**:
+       * input_size: The number of input features.
+       * num_layers: The number of hidden layers.
+       * hidden_size: The number of neurons in each hidden layer.
+       * function: The activation function to use ('ReLU' or 'Sigmoid').
+   3. **Network Layers**:
+       * self.proj: A linear layer that projects the input features to the hidden size.
+       * self.layers: A sequential container to hold multiple hidden layers. Each hidden layer consists of a linear transformation followed by an activation function (ReLU or Sigmoid).
+       * self.output: A linear layer that projects the hidden layer output to the number of classes (2 in this case, for binary classification).
+   4. **The forward method**: The forward method defines how the input data passes through the network
+       * Projection: The input x is first passed through the projection layer (self.proj).
+       * Hidden Layers: The projected input is then passed through the sequential container of hidden layers (self.layers).
+       * Output Layer: Finally, the output from the hidden layers is passed through the output layer (self.output) to produce the final logits for classification.
+![SimpleNNClass](GitHub_Pages/Images/simpleNNclass.png)
 
 
 ## Results/Discussion ##
@@ -243,7 +261,7 @@ Though the model performs rather well, further improvements could be made by inc
 <br>
 <br>
 
-**Neural Networks**
+**Neural Network**
 
 ## References
 [1] “FastStats,” Leading Causes of Death. https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm
