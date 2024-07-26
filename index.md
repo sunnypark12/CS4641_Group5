@@ -44,7 +44,7 @@ As illustrated, the data cleaning process significantly improved the dataset qua
    - **Random Forest Classification (sklearn)** for highlighting important features and complex relationships.
    - **K-Nearest Neighbors (scikit-learn)** for simple predictions based on similarity and visualization of the data.
    - **Neural Network (pytorch)** for handling high-dimensional data with deep learning techniques for flexibility.
-2. ## Data Preprocessing:##
+2. ## Data Preprocessing: ##
    - **Dimensionality Reduction with PCA** to simplify data and remove redundant features.
    - **Fill in missing data (pandas)**
 <br>
@@ -212,15 +212,15 @@ Thus, we used combination of grid search and early stopping for hyperparameter t
 - Grid Search: Trying out combinations of different hyperparameters
 - Early Stopping: Monitoring validation loss and stopping training when performance ceases to improve to avoid overfitting
 
-##### Hyperparameters #####
-**1. num_layers (Number of Layers):** Number of hidden layers in the neural network<br>More layers can potentially capture more complex patterns in the data but can also lead to overfitting. Increasing the number of layers might improve performance up to a certain point, beyond which the model might overfit.
-**2. hidden_size (Number of Neurons per Layer):** Number of neurons in each hidden layer<br>More neurons can increase the model's capacity to learn from data but can also lead to overfitting. Increasing the number of neurons may improve performance up to a point, after which it could lead to overfitting.
-**3. activation (Activation Function):** Introduces non-linearity into the model, enabling it to learn complex patterns<br>ReLU might perform better for deeper networks as it mitigates the vanishing gradient problem while Sigmoid might be useful for shallower networks or specific tasks where its output range is more appropriate.
-**4. learning_rate (Learning Rate):** Controls how much the model's weights are adjusted with respect to the loss gradient during training<br> Lower learning rate might lead to more stable convergence but may require more epochs to train while higher learning rate might speed up training but could cause the model to miss the optimal solution.
-**5. batch_size (Batch Size):** Number of samples processed before the model's internal parameters are updated<br>Smaller batch sizes can lead to noisier updates but more frequent adjustments while larger batch sizes can make training more stable but might lead to overfitting.
-**6. epochs (Number of Epochs):** Number of complete passes through the training dataset<br>More epochs generally improve performance up to a point, after which the model might start overfitting.
-**7. patience:** Number of epochs with no improvement after which training will be stopped
-**8. delta:** minimum change in the monitored quantity to qualify as an improvement.
+### Hyperparameters ###
+**1. num_layers (Number of Layers):** <br>Number of hidden layers in the neural network<br>More layers can potentially capture more complex patterns in the data but can also lead to overfitting. Increasing the number of layers might improve performance up to a certain point, beyond which the model might overfit.<br>
+**2. hidden_size (Number of Neurons per Layer):** <br>Number of neurons in each hidden layer<br>More neurons can increase the model's capacity to learn from data but can also lead to overfitting. Increasing the number of neurons may improve performance up to a point, after which it could lead to overfitting.<br>
+**3. activation (Activation Function):** <br>Introduces non-linearity into the model, enabling it to learn complex patterns<br>ReLU might perform better for deeper networks as it mitigates the vanishing gradient problem while Sigmoid might be useful for shallower networks or specific tasks where its output range is more appropriate.<br>
+**4. learning_rate (Learning Rate):** <br>Controls how much the model's weights are adjusted with respect to the loss gradient during training<br> Lower learning rate might lead to more stable convergence but may require more epochs to train while higher learning rate might speed up training but could cause the model to miss the optimal solution.<br>
+**5. batch_size (Batch Size):** <br>Number of samples processed before the model's internal parameters are updated<br>Smaller batch sizes can lead to noisier updates but more frequent adjustments while larger batch sizes can make training more stable but might lead to overfitting.<br>
+**6. epochs (Number of Epochs):** <br>Number of complete passes through the training dataset<br>More epochs generally improve performance up to a point, after which the model might start overfitting.<br>
+**7. patience:** <br>Number of epochs with no improvement after which training will be stopped<br>
+**8. delta:** <br>minimum change in the monitored quantity to qualify as an improvement.<br>
 
 ![Hyperparameter](GitHub_Pages/Images/Hyperparam.png)
 <br>
