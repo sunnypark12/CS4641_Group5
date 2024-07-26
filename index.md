@@ -1,7 +1,7 @@
 # CS4641_Group5
 Patcharapong Aphiwetsa, SeungTaek(Stan) Lee, Shayahn Mirfendereski, Sunho(Sunny) Park, Joshua K Thomas
 
-## Introduction/Background
+# Introduction/Background
 According to the CDC [1], heart failure is the leading cause of death in the world, affecting over 600,000 people in the U.S. alone. There are more than a handful of machine learning models [2], [3], such as K Nearest Neighbor, Naive Bayes Classifier, and Ridge Classifier, that have been applied to predict heart failure by utilizing inputted clinical features. These features can include age, cholesterol levels, and blood pressure. The provided datasets contain comprehensive statistics of clinical factors relating to the risk of heart failure:
 1. **[Heart Failure Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction) by fedesoriano:**
    - Features: Common event features caused by CVDs
@@ -12,11 +12,11 @@ According to the CDC [1], heart failure is the leading cause of death in the wor
 <br>
 <br>
 
-## Problem/Motivation
+# Problem/Motivation
 Despite significant advances in medical technology, accurately predicting heart failure remains a challenging task. Many existing models are not generalizable across different patient populations and often fail to provide actionable insights for healthcare providers. The complexity and variability of human physiology necessitate more sophisticated predictive models that can handle diverse and high-dimensional data. For instance, several research papers like [4] have identified various factors, including environmental, genetic, and lifestyle factors, that are correlated with heart failure risk, underscoring the need for improved predictive models that effectively capture and embody the relationships among them. Such models are crucial for identifying high-risk patients earlier and more accurately in a wider range of scope, enhancing treatment plans and reducing mortality rates. Leveraging machine learning models can provide robust, reliable predictions in clinical settings.
 <br>
 
-## Data Cleaning
+# Data Cleaning
 Our group decided to utilize the first dataset we found from Kaggle, the _Heart Failure Prediction Dataset_. The dataset contained some missing values and inconsistencies that needed to be addressed before we could proceed with our analysis. Here, we describe the steps we took to clean the dataset and provide a comparison of the dataset before and after cleaning.
 <br>
 
@@ -39,18 +39,18 @@ Our group decided to utilize the first dataset we found from Kaggle, the _Heart 
 As illustrated, the data cleaning process significantly improved the dataset quality, making it more suitable for subsequent analysis and modeling.
 <br>
 
-## Methods
-1. **Supervised Methods:**
+# Methods
+1. ## Supervised Methods: ##
    - **Random Forest Classification (sklearn)** for highlighting important features and complex relationships.
    - **K-Nearest Neighbors (scikit-learn)** for simple predictions based on similarity and visualization of the data.
    - **Neural Network (pytorch)** for handling high-dimensional data with deep learning techniques for flexibility.
-2. **Data Preprocessing:**
+2. ## Data Preprocessing:##
    - **Dimensionality Reduction with PCA** to simplify data and remove redundant features.
    - **Fill in missing data (pandas)**
 <br>
 <br>
 
-## Supervised Method 1: Random Forest Model ##
+# Supervised Method 1: Random Forest Model #
 
 1. **Loading the Dataset:** <br> We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
 2. **Handling Categorical Variables:** <br> We used label encoding for categorical variables, as it is suitable for tree-based algorithms like Random Forest.
@@ -59,7 +59,7 @@ As illustrated, the data cleaning process significantly improved the dataset qua
 ![ScaleData](GitHub_Pages/Images/ScaleData.png)
 <br>
 
-**Model Training and Evaluation**
+### Model Training and Evaluation ###
 
 For Random Forest Model, we go through the following steps for training and prediction:
 1. Build new data set from original data : randomly select the data while keeping the same number of rows with the original data set.
@@ -68,13 +68,13 @@ For Random Forest Model, we go through the following steps for training and pred
 
 We used Stratified K-Fold cross-validation to estimate the performance of our model. 
 
-**Stratified k-fold cross-validation :**
+### Stratified k-fold cross-validation ###
 - For skewed datasets, such as those with 90% positive and 10% negative samples, using simple k-fold cross-validation can result in folds with only negative samples.
 - In such cases, stratified k-fold cross-validation is preferred. This method ensures that the ratio of labels (e.g., 90% positive and 10% negative) remains consistent in each fold.
 - By maintaining this ratio, stratified k-fold cross-validation provides more reliable and consistent evaluation metrics across all folds, regardless of the metric chosen.
 <br>
 
-   **OUTPUT**
+   #### OUTPUT ####
   
    Cross-Validation ROC-AUC Scores: [0.93936966 0.93418202 0.92759119 0.93625858 0.90790899]
   
@@ -85,7 +85,7 @@ We used Stratified K-Fold cross-validation to estimate the performance of our mo
 <br>
 <br>
 
-## Supervised Method 2: K-Nearest Neighbors Model ##
+# Supervised Method 2: K-Nearest Neighbors Model #
 
 1. **Loading the Dataset:** <br> We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
 2. **Handling Categorical Variables:** <br> We used One-hot encoding for categorical variables to avoid the distorting distance metric in KNN.
@@ -98,17 +98,17 @@ The heatmap below visualizes how much each original feature contributes to the p
 ![PCAComponentLoadings](GitHub_Pages/Images/PCAcomponentloadings.png)
 <br>
 
-**Model Training and Evaluation**
+### Model Training and Evaluation ### 
 
 K-Nearest Neighbors is a type of instance-based learning (also known as lazy learning), which has a different approach to training and prediction compared to other machine learning models.
 
-**Training in KNN:**
+#### Training in KNN: ####
 
 * No Explicit Training Phase: KNN does not have a traditional training phase where the model parameters are learned from the data.
 * Storage of Training Data: The "training" in KNN essentially involves storing the entire training dataset. There are no weights or parameters to update.
 * Distance Computation: During prediction, KNN computes the distance between the query point and all points in the training dataset to find the k-nearest neighbors.
 
-**Prediction in KNN:**
+#### Prediction in KNN: ####
 
 * Distance Calculation: For a given query point, KNN calculates the distance (commonly Euclidean distance) to all training points.
 * Neighbor Selection: It selects the k-nearest neighbors based on the smallest distances.
@@ -116,7 +116,7 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
 <br>
 <br>
 
-## Supervised Method 3: Neural Network ##
+# Supervised Method 3: Neural Network #
 
 1. **Loading the Dataset:** <br> We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
 
@@ -164,11 +164,11 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
 ![SimpleNNClass](GitHub_Pages/Images/simpleNNclass.png)
 <br>
 
-**Model Training and Evaluation**
+### Model Training and Evaluation ###
 
 The train_model function is designed to train a neural network model with specified hyperparameters and return the training and validation losses and accuracies over epochs. **The function also includes early stopping to prevent overfitting**.
 
-**1. Initialization**
+#### 1. Initialization ####
 
 1. **Model Initialization:**
    * The model is initialized with the given input_size, num_layers, hidden_size, and activation function, and then moved to the specified device (CPU or GPU).
@@ -182,7 +182,7 @@ The train_model function is designed to train a neural network model with specif
    * Lists to store training and validation losses and accuracies for each epoch.
    * Variables for early stopping: best_test_loss to track the best validation loss and patience_counter to count the number of epochs without improvement.
 
-**2. Training Loop**
+#### 2. Training Loop ####
 
 1. **Epoch Loop:**
     * The model is set to training mode using model.train().
@@ -197,14 +197,14 @@ The train_model function is designed to train a neural network model with specif
     * If the current validation loss is better than the previous best validation loss minus a specified delta, the best validation loss is updated, and the patience counter is reset.
     * If no improvement is seen for a number of epochs equal to params['patience'], training stops early.
   
-**3. Return Values**
+#### 3. Return Values ####
 
 The function returns the training and validation losses and accuracies over epochs, and the trained model.
 
 ![NNTraining](GitHub_Pages/Images/NNtraining.png)
 <br>
 
-**4. Hyperparameter Tuning**
+#### 4. Hyperparameter Tuning ####
 
 In the context of neural networks, hyperparameter tuning can be resource-intensive due to the computational demands of training these models. Cross-validation, although highly effective for many machine learning models, is less practical for neural networks because training these models is typically very time-consuming.
 
@@ -212,7 +212,7 @@ Thus, we used combination of grid search and early stopping for hyperparameter t
 - Grid Search: Trying out combinations of different hyperparameters
 - Early Stopping: Monitoring validation loss and stopping training when performance ceases to improve to avoid overfitting
 
-**Hyperparameters**
+##### Hyperparameters #####
 **1. num_layers (Number of Layers):** Number of hidden layers in the neural network<br>More layers can potentially capture more complex patterns in the data but can also lead to overfitting. Increasing the number of layers might improve performance up to a certain point, beyond which the model might overfit.
 **2. hidden_size (Number of Neurons per Layer):** Number of neurons in each hidden layer<br>More neurons can increase the model's capacity to learn from data but can also lead to overfitting. Increasing the number of neurons may improve performance up to a point, after which it could lead to overfitting.
 **3. activation (Activation Function):** Introduces non-linearity into the model, enabling it to learn complex patterns<br>ReLU might perform better for deeper networks as it mitigates the vanishing gradient problem while Sigmoid might be useful for shallower networks or specific tasks where its output range is more appropriate.
@@ -226,16 +226,16 @@ Thus, we used combination of grid search and early stopping for hyperparameter t
 <br>
 <br>
 
-## Results/Discussion ##
+# Results/Discussion #
 
-**1. Random Forest Classification**
+## 1. Random Forest Classification ##
 
 By creating a heatmap, we could determine optimal hyperparameters for Random Forest model: **100 Random Decision Trees(N_estimator)**
 
 ![Heatmap](GitHub_Pages/Images/hyperparameter_heatmap.png)
 <br>
 
-**Evaluation**
+### Evaluation ###
 The model achieved the following performance metrics:
 
    | Class | Precision | Recall | F1-score | Support |
@@ -260,13 +260,13 @@ The confusion matrix representing our precision, Recall, F1-score is as shown be
 **F1-Score:** The F1-score, which is the harmonic mean of precision and recall, is 0.89. This score represents a balanced measure of the model's accuracy, taking both precision and recall into account. An F1-score of 0.89 indicates that the model performs well in both detecting heart disease and minimizing false alarms, making it a reliable tool for this predictive task.
 <br>
 
-**Comparing Random Forest Accuracy Using Feature Elimination**
+#### Comparing Random Forest Accuracy Using Feature Elimination ####
 
-Plot of Feature Importance
+##### Plot of Feature Importance ##### 
 ![feature](GitHub_Pages/Images/feature.jpeg)
 <br>
 
-Recursive Feature Elimination Graph
+##### Recursive Feature Elimination Graph #####
 ![graph](GitHub_Pages/Images/graph.jpeg)
 
 For Random Forest Models, using all features results to maximum performance. 
@@ -276,7 +276,7 @@ According to the graphs, we can conclude that in our Random Forest models, elimi
 <br>
 <br>
 
-**2. K-Nearest Neighbors**
+## 2. K-Nearest Neighbors ##
 
 We found the optimal hyper parameter k using cross-validation which gives us an unbiased estimate of the model's performance. Cross-validation is the average accuracy of the model on the validation folds during the cross-validation proces. This helps estimate the model's performance on unseen data.
 
@@ -300,7 +300,7 @@ To elaborate, some possible explanations of why this is happening could be of th
 Thus, the practical approach would be to choose a k value based on the cross-validation since it is a more reliable estimate of performance across different data splits. 
 <br>
 
-**Evaluation**
+### Evaluation ###
 The model achieved the following performance metrics:
 
    | Class | Precision | Recall | F1-score | Support |
@@ -329,11 +329,7 @@ The precision and recall values for both classes are high, indicating that the m
 * **Confusion Matrix Insights:** The confusion matrix shows a balanced performance between the two classes, with slightly more false positives for class 0 (7) than false negatives for class 1 (9). The number of true positives is high for both classes, showing the model's effectiveness.
 <br>
 
-**Potential Improvements**
-Though the model performs rather well, further improvements could be made by increasing the size of the training data or exploring advanced techniques such as ensemble learning.
-<br>
-
-**3. Neural Network**<br>
+## 3. Neural Network ##
 The final performance of our neural network model was evaluated using the best hyperparameters identified through an extensive hyperparameter tuning process. The training, validation, and testing losses and accuracies were monitored and plotted over the course of 25 epochs.
 
 **1. Hyperparameter Tuning Results**<br>![Hyperparameter Tuning Results](GitHub_Pages/Images/hyperResult.png)<br>Best Parameters: {'num_layers': 12, 'hidden_size': 256, 'activation': 'ReLU', 'learning_rate': 0.001, 'batch_size': 16, 'epochs': 50, 'val_accuracy': 0.9107142857142857, 'delta': 0.001, 'patience': 5}<br>
@@ -351,14 +347,15 @@ The final performance of our neural network model was evaluated using the best h
 3. Convergence Phase:<br>The training accuracy continues to improve, while validation and testing accuracies remain stable, suggesting a balanced learning process.
 4. Final Phase:<br>The training, validation, and testing accuracies stabilize, indicating that the model has learned the patterns well and is performing consistently across all datasets.
 
-**Early Stopping**
+#### Early Stopping ####
 Early stopping criteria were employed during training to prevent overfitting. The model was set to stop training if there was no significant improvement in validation loss for a certain number of epochs (patience). In this case, early stopping was not triggered, suggesting that the model continued to learn effectively up to the final epoch.
 
-**Model Performance:**
+#### Model Performance: ####
 <br>
 The final model achieves a high validation accuracy of around 90%, indicating strong generalization performance.
 <br>
-**Overfitting Mitigation:** 
+
+#### Overfitting Mitigation: #### 
 <br>The use of early stopping, appropriate activation functions, and hyperparameter tuning helped mitigate overfitting and ensured the model remained robust.
 <br>
 
