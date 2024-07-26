@@ -190,6 +190,10 @@ The train_model function is designed to train a neural network model with specif
 
 The function returns the training and validation losses and accuracies over epochs, and the trained model.
 
+![NNTraining](GitHub_Pages/Images/NNtraining.png)
+<br>
+<br>
+
 ## Results/Discussion ##
 
 **Random Forest Classification**
