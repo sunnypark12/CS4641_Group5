@@ -329,23 +329,23 @@ Though the model performs rather well, further improvements could be made by inc
   </tr>
   <tr>
     <td style="text-align:center">Elmo</td>
-    <td style="text-align:center">KMeans Data Cleaning/Encoding, Random Forest Analysis, PCA Visualizations</td>
+    <td style="text-align:center"></td>
   </tr>
   <tr>
     <td style="text-align:center">Stan</td>
-    <td style="text-align:center">Data Analysis, Random Forest Code Implementation, Visualization of Quantitative Metrics</td>
+    <td style="text-align:center"></td>
   </tr>
   <tr>
     <td style="text-align:center">Sunny</td>
-    <td style="text-align:center">Data Cleaning, Random Forest Code Implementation, Github Page Design & Update</td>
+    <td style="text-align:center"></td>
   </tr>
   <tr>
     <td style="text-align:center">Shayahn</td>
-    <td style="text-align:center">Random Forest Analysis, PCA Code Implementation, Github Page Documentation</td>
+    <td style="text-align:center">Neural Network Implementation and Visual Analysis, GitHub Documentation</td>
   </tr>
   <tr>
     <td style="text-align:center">Joshua</td>
-    <td style="text-align:center">Random Forest Analysis/Visualization, PCA Code Implementation</td>
+    <td style="text-align:center"></td>
   </tr>
 </table>
 
