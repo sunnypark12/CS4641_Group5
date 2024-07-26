@@ -208,14 +208,14 @@ Thus, we used combination of grid search and early stopping for hyperparameter t
 - Early Stopping: Monitoring validation loss and stopping training when performance ceases to improve to avoid overfitting
 
 ### Hyperparameters ###
-**1. num_layers (Number of Layers):** <br>Number of hidden layers in the neural network<br>More layers can potentially capture more complex patterns in the data but can also lead to overfitting. Increasing the number of layers might improve performance up to a certain point, beyond which the model might overfit.<br>
-**2. hidden_size (Number of Neurons per Layer):** <br>Number of neurons in each hidden layer<br>More neurons can increase the model's capacity to learn from data but can also lead to overfitting. Increasing the number of neurons may improve performance up to a point, after which it could lead to overfitting.<br>
-**3. activation (Activation Function):** <br>Introduces non-linearity into the model, enabling it to learn complex patterns<br>ReLU might perform better for deeper networks as it mitigates the vanishing gradient problem while Sigmoid might be useful for shallower networks or specific tasks where its output range is more appropriate.<br>
-**4. learning_rate (Learning Rate):** <br>Controls how much the model's weights are adjusted with respect to the loss gradient during training<br> Lower learning rate might lead to more stable convergence but may require more epochs to train while higher learning rate might speed up training but could cause the model to miss the optimal solution.<br>
-**5. batch_size (Batch Size):** <br>Number of samples processed before the model's internal parameters are updated<br>Smaller batch sizes can lead to noisier updates but more frequent adjustments while larger batch sizes can make training more stable but might lead to overfitting.<br>
-**6. epochs (Number of Epochs):** <br>Number of complete passes through the training dataset<br>More epochs generally improve performance up to a point, after which the model might start overfitting.<br>
-**7. patience:** <br>Number of epochs with no improvement after which training will be stopped<br>
-**8. delta:** <br>minimum change in the monitored quantity to qualify as an improvement.<br>
+**1. num_layers (Number of Layers):** <br>More layers can potentially capture more complex patterns in the data but can also lead to overfitting. Increasing the number of layers might improve performance up to a certain point, beyond which the model might overfit.<br><br>
+**2. hidden_size (Number of Neurons per Layer):** <br>More neurons can increase the model's capacity to learn from data but can also lead to overfitting. Increasing the number of neurons may improve performance up to a point, after which it could lead to overfitting.<br><br>
+**3. activation (Activation Function):** <br>ReLU might perform better for deeper networks as it mitigates the vanishing gradient problem while Sigmoid might be useful for shallower networks or specific tasks where its output range is more appropriate.<br><br>
+**4. learning_rate (Learning Rate):** <br>Lower learning rate might lead to more stable convergence but may require more epochs to train while higher learning rate might speed up training but could cause the model to miss the optimal solution.<br>
+**5. batch_size (Batch Size):** <br>Smaller batch sizes can lead to noisier updates but more frequent adjustments while larger batch sizes can make training more stable but might lead to overfitting.<br><br>
+**6. epochs (Number of Epochs):** <br>More epochs generally improve performance up to a point, after which the model might start overfitting.<br><br>
+**7. patience:** <br>fixed values not to be tuned<br><br>
+**8. delta:** <br>fixed values not to be tune<br><br>
 
 ![Hyperparameter](GitHub_Pages/Images/Hyperparam.png)
 <br>
