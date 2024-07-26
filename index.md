@@ -332,7 +332,7 @@ The precision and recall values for both classes are high, indicating that the m
 ## 3. Neural Network ##
 The final performance of our neural network model was evaluated using the best hyperparameters identified through an extensive hyperparameter tuning process. The training, validation, and testing losses and accuracies were monitored and plotted over the course of 25 epochs.
 
-**1. Hyperparameter Tuning Results**<br>![Hyperparameter Tuning Results](GitHub_Pages/Images/hyperResult.png)<br>Best Parameters: {'num_layers': 12, 'hidden_size': 256, 'activation': 'ReLU', 'learning_rate': 0.001, 'batch_size': 16, 'epochs': 50, 'val_accuracy': 0.9107142857142857, 'delta': 0.001, 'patience': 5}<br>
+**1. Hyperparameter Tuning Results**<br>![Hyperparameter Tuning Results](GitHub_Pages/Images/hyperResult.png)<br>Best Parameters: 'num_layers': 12, 'hidden_size': 256, 'activation': 'ReLU', 'learning_rate': 0.001, 'batch_size': 16, 'epochs': 50, 'val_accuracy': 0.9107142857142857, 'delta': 0.001, 'patience': 5<br><br>
 **2. Training, Validation, Testing Loss**<br>Early stopping triggered at epoch 10<br>Test Accuracy: 0.8839<br>![NNLoss](GitHub_Pages/Images/NNLoss.png)
 
 **Plot Above** displays the training, validation, and testing losses across 25 epochs:<br>
@@ -351,19 +351,18 @@ The final performance of our neural network model was evaluated using the best h
 Early stopping criteria were employed during training to prevent overfitting. The model was set to stop training if there was no significant improvement in validation loss for a certain number of epochs (patience). In this case, early stopping was not triggered, suggesting that the model continued to learn effectively up to the final epoch.
 
 #### Model Performance: ####
-<br>
 The final model achieves a high validation accuracy of around 90%, indicating strong generalization performance.
 <br>
 
 #### Overfitting Mitigation: #### 
-<br>The use of early stopping, appropriate activation functions, and hyperparameter tuning helped mitigate overfitting and ensured the model remained robust.
+The use of early stopping, appropriate activation functions, and hyperparameter tuning helped mitigate overfitting and ensured the model remained robust.
 <br>
 
 
 # Comparison of Models #
 Here is a comparison of the three supervised learning models we used in terms of various performance metrics:
 
-## Evaluation Metrics ##
+### Evaluation Metrics ###
 The table below shows the performance of each model in terms of accuracy, precision, recall, and F1-score:
 
 | Model                 | Accuracy | Precision | Recall | F1-Score |
@@ -373,15 +372,22 @@ The table below shows the performance of each model in terms of accuracy, precis
 | Neural Network        | 88.39%   | -         | -      | -        |
 
 ### Confusion Matrix Insights ###
-- **Random Forest:** Demonstrated a high recall for detecting heart disease, indicating its effectiveness in identifying positive cases.
-- **K-Nearest Neighbors:** Showed balanced performance with high precision and recall for both classes.
-- **Neural Network:** Achieved a high validation accuracy of around 90% and generalization performance, with early stopping to prevent overfitting.
+- **Random Forest:** Demonstrated the highest recall for detecting heart disease, making it highly effective in identifying positive cases. It also had the highest overall accuracy.
+- **K-Nearest Neighbors:** Showed balanced performance across precision, recall, and F1-score, indicating reliability. However, its performance can be influenced by the choice of k and data splits.
+- **Neural Network:** Achieved high validation accuracy with effective overfitting mitigation(early stopping), but required extensive computational resources for training.
 
-### Conclusion ###
+## Conclusion ##
 All three models performed well in predicting heart disease, with slight variations in their performance metrics. The Random Forest model achieved the highest accuracy and recall, making it the most effective at identifying individuals with heart disease. The K-Nearest Neighbors model showed balanced performance across precision, recall, and F1-score, indicating its reliability. The Neural Network model also performed strongly, with effective mitigation of overfitting and robust generalization.
 
 **Final Remarks:** 
 The Random Forest model, with its highest accuracy and recall, is recommended for this specific task of heart disease prediction. However, the K-Nearest Neighbors and Neural Network models also provide valuable insights and could be further optimized for improved performance.
+
+**Next Steps**
+- **Model Optimization:** Further optimize each model, particularly focusing on feature selection and hyperparameter tuning.
+- **Ensemble Methods:** Explore ensemble methods to combine the strengths of each model for improved predictive performance.
+- **Larger Datasets:** Apply the models to larger and more diverse datasets to enhance generalizability and robustness.
+- **Clinical Integration:** Collaborate with healthcare providers to integrate the models into clinical settings and validate their effectiveness in real-world applications.
+
 
 ## References
 [1] “FastStats,” Leading Causes of Death. https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm
