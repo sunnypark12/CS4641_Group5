@@ -137,7 +137,8 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
    <br>
    
    **Understanding the Structure of Training Data: Visualization Using PCA** <br>
-   Though we didn't use PCA during training, the visualization of training data with PCA provided better understanding of the data structure and insights on separability of classes. We found out reducing our training data to a 2D projection would be effective in having better interpretation. 
+   Though we didn't use PCA during training, the visualization of training data with PCA provided better understanding of the data structure and insights on separability of classes. We found out reducing our training data to a 2D projection would be effective in having better interpretation.
+   
    ![PCA_NN](GitHub_Pages/Images/PCA_NN.png)
    
    - Class Separation: Two classes(0 and 1) shown in different colors have noticeable but not complete separation, indicating a positive sign of classification in that the classes are somewhat distinguishable.
@@ -145,7 +146,7 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
    - Principal Components: The first principal component (PC1) seems to capture more variance as there is more spread along the x-axis compared to the y-axis (PC2).
    - Implications for Model Training: The overlap between classes indicates that while some regions of the feature space are well-separated, others are not; thus suggesting that a more complex model might be needed to capture the nuances in the data.
 
-3. **Defining the Neural Network:** <br> Using the `SimpleNN` class in the PyTorch framework, we defined a simple feedforward neural network using the following steps:
+4. **Defining the Neural Network:** <br> Using the `SimpleNN` class in the PyTorch framework, we defined a simple feedforward neural network using the following steps:
 
    1. **Initialization**: (__init__ method)
    2. **Input Parameters**:
