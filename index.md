@@ -404,19 +404,19 @@ The Random Forest model, with its highest accuracy and recall, is recommended fo
   </tr>
   <tr>
     <td style="text-align:center">Elmo</td>
-    <td style="text-align:center"></td>
+    <td style="text-align:center">PCA Visualization, visualizing K-Means on PCA, NN model and Hyperparameter Search, Clean data with Mean, Random Forest Hyperparameter Search</td>
   </tr>
   <tr>
     <td style="text-align:center">Stan</td>
-    <td style="text-align:center"></td>
+    <td style="text-align:center">Code Implementation of Random Forest, KNN, Code Review and Modification of Neural Networks, Analysis of Model Performance</td>
   </tr>
   <tr>
     <td style="text-align:center">Sunny</td>
-    <td style="text-align:center"></td>
+    <td style="text-align:center">Data Cleaning, Code Implementation of KNN and NN, Model Analysis and Comparisons, Github Documentation, Final Presentation</td>
   </tr>
   <tr>
     <td style="text-align:center">Shayahn</td>
-    <td style="text-align:center">Neural Network Implementation and Visual Analysis, Model Comparisons, GitHub Documentation</td>
+    <td style="text-align:center">Random Forest Analysis, PCA Code Implementation, NN Implementation and Visual Analysis, Model Comparisons, GitHub Documentation</td>
   </tr>
   <tr>
     <td style="text-align:center">Joshua</td>
