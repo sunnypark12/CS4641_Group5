@@ -331,8 +331,8 @@ The final performance of our neural network model was evaluated using the best h
 **2. Training, Validation, Testing Loss**<br>Early stopping triggered at epoch 10<br>Test Accuracy: 0.8839<br>![NNLoss](GitHub_Pages/Images/NNLoss.png)
 
 **Plot Above** displays the training, validation, and testing losses across 10 epochs due to early stopping:<br>
-1. Early and Mid Phases (Epochs 1-7)::<br>The training, validation, and testing losses all decrease, indicating that the model is learning effectively. The validation and testing losses decrease at a similar rate to the training loss, suggesting good generalization during these phases.
-4. Later Phases (Epochs 8-10)::<br>The validation and testing losses start to increase, while the training loss continues to decrease slightly. This divergence is a classic sign of overfitting, where the model starts to memorize the training data rather than generalizing to unseen data.
+1. Early and Mid Phases (Epochs 1-7):<br>The training, validation, and testing losses all decrease, indicating that the model is learning effectively. The validation and testing losses decrease at a similar rate to the training loss, suggesting good generalization during these phases.
+4. Later Phases (Epochs 8-10):<br>The validation and testing losses start to increase, while the training loss continues to decrease slightly. This divergence is a classic sign of overfitting, where the model starts to memorize the training data rather than generalizing to unseen data.
 
 **Plot Below** displays the training, validation, and testing accuracies over the same epochs:<br>
 1. Early and Mid Phases (Epochs 1-7):<br>Training, validation, and testing accuracies increase significantly, with all three metrics following a similar trend. This indicates that the model is improving its performance on both seen (training) and unseen (validation and testing) data.
