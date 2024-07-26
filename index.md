@@ -154,20 +154,19 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
 
 **Model Training and Evaluation**
 
-The train_model function is designed to train a neural network model with specified hyperparameters and return the training and validation losses and accuracies over epochs. **It also includes early stopping to prevent overfitting**.
+The train_model function is designed to train a neural network model with specified hyperparameters and return the training and validation losses and accuracies over epochs. **The function also includes early stopping to prevent overfitting**.
 
 **Initialization**
 
 1. **Model Initialization:**
-   * The model is initialized with the given input_size, num_layers, hidden_size, and activation function.
-   * The model is moved to the specified device (CPU or GPU).
-3. **Optimizer and Loss Function:**
+   * The model is initialized with the given input_size, num_layers, hidden_size, and activation function, and then moved to the specified device (CPU or GPU).
+2. **Optimizer and Loss Function:**
    * The Adam optimizer is used with a learning rate specified in the hyperparameters.
-   * The loss function used is nn.CrossEntropyLoss(), which is suitable for classification tasks.
-   * The adam optimizer is used to optimize the internal parameters (weights and biases) of the neural network during the learning process.
-4. **Data Loaders:**
+   * nn.CrossEntropyLoss() is the loss function used, which is suitable for classification tasks.
+   * The Adam optimizer is used to optimize the internal parameters (weights and biases) of the neural network during the learning process.
+3. **Data Loaders:**
    * The training and testing datasets are loaded into DataLoaders with the specified batch size for efficient batch processing during training and evaluation.
-5. **Tracking Variables:**
+4. **Tracking Variables:**
    * Lists to store training and validation losses and accuracies for each epoch.
    * Variables for early stopping: best_test_loss to track the best validation loss and patience_counter to count the number of epochs without improvement.
 
@@ -183,7 +182,7 @@ The train_model function is designed to train a neural network model with specif
     * The loss and correct predictions are tracked for each batch in the validation set.
     * Validation loss and accuracy are calculated and appended to their respective lists.
 3. **Early Stopping:**
-    * If the current validation loss is better than the best validation loss minus a specified delta, the best validation loss is updated, and the patience counter is reset.
+    * If the current validation loss is better than the previous best validation loss minus a specified delta, the best validation loss is updated, and the patience counter is reset.
     * If no improvement is seen for a number of epochs equal to params['patience'], training stops early.
   
 **Return Values**
