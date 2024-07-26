@@ -52,18 +52,10 @@ As illustrated, the data cleaning process significantly improved the dataset qua
 
 ## Supervised Method 1: Random Forest Model ##
 
-1. **Loading the Dataset:**
-
-We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
-
-2. **Handling Categorical Variables:**
-
-We used label encoding for categorical variables, as it is suitable for tree-based algorithms like Random Forest.
+1. **Loading the Dataset:** <br> We loaded the cleaned dataset and checked the data types to ensure proper conversion of string data to appropriate types.
+2. **Handling Categorical Variables:** <br> We used label encoding for categorical variables, as it is suitable for tree-based algorithms like Random Forest.
 ![LabelEncoding](GitHub_Pages/Images/LabelEncoding.png)
-
-3. **Scaling Features:**
-
-Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
+3. **Scaling Features:** <br> Numerical features were scaled to standardize the data, which helps in improving model performance and stability.
 ![ScaleData](GitHub_Pages/Images/ScaleData.png)
 <br>
 
