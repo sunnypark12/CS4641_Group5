@@ -132,18 +132,18 @@ K-Nearest Neighbors is a type of instance-based learning (also known as lazy lea
       We scaled the features using `StandardScaler` to standardize the data.
    5. **Converting Data to PyTorch Tensors**
       Finally, we converted the NumPy arrays into PyTorch tensors, which are required for training the neural network.
-      
-![NNPreprocessing](GitHub_Pages/Images/NNpreprocessing.png)
-<br>
-
-**Understanding the Structure of Training Data: Visualization Using PCA** <br>
-Though we didn't use PCA during training, the visualization of training data with PCA provided better understanding of the data structure and insights on separability of classes. We found out reducing our training data to a 2D projection would be effective in having better interpretation. 
-![PCA_NN](GitHub_Pages/Images/PCA_NN.png)
-
-- Class Separation: Two classes(0 and 1) shown in different colors have noticeable but not complete separation, indicating a positive sign of classification in that the classes are somewhat distinguishable.
-- Cluster Density: The density of points for each class varies across the plot, but there are regions where the two classes overlap significantly, which could lead to some misclassifications.
-- Principal Components: The first principal component (PC1) seems to capture more variance as there is more spread along the x-axis compared to the y-axis (PC2).
-- Implications for Model Training: The overlap between classes indicates that while some regions of the feature space are well-separated, others are not; thus suggesting that a more complex model might be needed to capture the nuances in the data.
+         
+   ![NNPreprocessing](GitHub_Pages/Images/NNpreprocessing.png)
+   <br>
+   
+   **Understanding the Structure of Training Data: Visualization Using PCA** <br>
+   Though we didn't use PCA during training, the visualization of training data with PCA provided better understanding of the data structure and insights on separability of classes. We found out reducing our training data to a 2D projection would be effective in having better interpretation. 
+   ![PCA_NN](GitHub_Pages/Images/PCA_NN.png)
+   
+   - Class Separation: Two classes(0 and 1) shown in different colors have noticeable but not complete separation, indicating a positive sign of classification in that the classes are somewhat distinguishable.
+   - Cluster Density: The density of points for each class varies across the plot, but there are regions where the two classes overlap significantly, which could lead to some misclassifications.
+   - Principal Components: The first principal component (PC1) seems to capture more variance as there is more spread along the x-axis compared to the y-axis (PC2).
+   - Implications for Model Training: The overlap between classes indicates that while some regions of the feature space are well-separated, others are not; thus suggesting that a more complex model might be needed to capture the nuances in the data.
 
 3. **Defining the Neural Network:** <br> Using the `SimpleNN` class in the PyTorch framework, we defined a simple feedforward neural network using the following steps:
 
@@ -212,17 +212,15 @@ Thus, we used combination of grid search and early stopping for hyperparameter t
 - Grid Search: Trying out combinations of different hyperparameters
 - Early Stopping: Monitoring validation loss and stopping training when performance ceases to improve to avoid overfitting
 
-<br>
-
 **Hyperparameters**
-1. num_layers (Number of Layers): Number of hidden layers in the neural network<br>More layers can potentially capture more complex patterns in the data but can also lead to overfitting. Increasing the number of layers might improve performance up to a certain point, beyond which the model might overfit.
-2. hidden_size (Number of Neurons per Layer): Number of neurons in each hidden layer<br>More neurons can increase the model's capacity to learn from data but can also lead to overfitting. Increasing the number of neurons may improve performance up to a point, after which it could lead to overfitting.
-3. activation (Activation Function): Introduces non-linearity into the model, enabling it to learn complex patterns<br>ReLU might perform better for deeper networks as it mitigates the vanishing gradient problem while Sigmoid might be useful for shallower networks or specific tasks where its output range is more appropriate.
-4. learning_rate (Learning Rate): Controls how much the model's weights are adjusted with respect to the loss gradient during training<br> Lower learning rate might lead to more stable convergence but may require more epochs to train while higher learning rate might speed up training but could cause the model to miss the optimal solution.
-5. batch_size (Batch Size): Number of samples processed before the model's internal parameters are updated<br>Smaller batch sizes can lead to noisier updates but more frequent adjustments while larger batch sizes can make training more stable but might lead to overfitting.
-6. epochs (Number of Epochs): Number of complete passes through the training dataset<br>More epochs generally improve performance up to a point, after which the model might start overfitting.
-7. patience: Number of epochs with no improvement after which training will be stopped
-8. delta: minimum change in the monitored quantity to qualify as an improvement.
+**1. num_layers (Number of Layers):** Number of hidden layers in the neural network<br>More layers can potentially capture more complex patterns in the data but can also lead to overfitting. Increasing the number of layers might improve performance up to a certain point, beyond which the model might overfit.
+**2. hidden_size (Number of Neurons per Layer):** Number of neurons in each hidden layer<br>More neurons can increase the model's capacity to learn from data but can also lead to overfitting. Increasing the number of neurons may improve performance up to a point, after which it could lead to overfitting.
+**3. activation (Activation Function):** Introduces non-linearity into the model, enabling it to learn complex patterns<br>ReLU might perform better for deeper networks as it mitigates the vanishing gradient problem while Sigmoid might be useful for shallower networks or specific tasks where its output range is more appropriate.
+**4. learning_rate (Learning Rate):** Controls how much the model's weights are adjusted with respect to the loss gradient during training<br> Lower learning rate might lead to more stable convergence but may require more epochs to train while higher learning rate might speed up training but could cause the model to miss the optimal solution.
+**5. batch_size (Batch Size):** Number of samples processed before the model's internal parameters are updated<br>Smaller batch sizes can lead to noisier updates but more frequent adjustments while larger batch sizes can make training more stable but might lead to overfitting.
+**6. epochs (Number of Epochs):** Number of complete passes through the training dataset<br>More epochs generally improve performance up to a point, after which the model might start overfitting.
+**7. patience:** Number of epochs with no improvement after which training will be stopped
+**8. delta:** minimum change in the monitored quantity to qualify as an improvement.
 
 ![Hyperparameter](GitHub_Pages/Images/Hyperparam.png)
 <br>
@@ -335,10 +333,10 @@ The precision and recall values for both classes are high, indicating that the m
 Though the model performs rather well, further improvements could be made by increasing the size of the training data or exploring advanced techniques such as ensemble learning.
 <br>
 
-**Neural Network**
+**3. Neural Network**<br>
 The final performance of our neural network model was evaluated using the best hyperparameters identified through an extensive hyperparameter tuning process. The training, validation, and testing losses and accuracies were monitored and plotted over the course of 25 epochs.
 
-**1. Hyperparameter Tuning Results**<br>![Hyperparameter Tuning Results](GitHub_Pages/Images/hyperResult.png)<br>Best Parameters: {'num_layers': 12, 'hidden_size': 256, 'activation': 'ReLU', 'learning_rate': 0.001, 'batch_size': 16, 'epochs': 50, 'val_accuracy': 0.9107142857142857, 'delta': 0.001, 'patience': 5}
+**1. Hyperparameter Tuning Results**<br>![Hyperparameter Tuning Results](GitHub_Pages/Images/hyperResult.png)<br>Best Parameters: {'num_layers': 12, 'hidden_size': 256, 'activation': 'ReLU', 'learning_rate': 0.001, 'batch_size': 16, 'epochs': 50, 'val_accuracy': 0.9107142857142857, 'delta': 0.001, 'patience': 5}<br>
 **2. Training, Validation, Testing Loss**<br>Early stopping triggered at epoch 10<br>Test Accuracy: 0.8839<br>![NNLoss](GitHub_Pages/Images/NNLoss.png)
 
 **Plot Above** displays the training, validation, and testing losses across 25 epochs:<br>
