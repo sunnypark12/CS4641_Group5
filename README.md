@@ -10,11 +10,13 @@ The project is structured into various directories for data preprocessing, analy
 - **/GitHub_Pages/**: Resources for the project's GitHub Pages site.
      - **GitHub_Pages/Images/**: Images used for the GitHub Pages site, such as plots, graphs, and code snapshots
 - **/Preprocessing/**: Scripts for data cleaning and preprocessing.
-     - **/Preprocessing/PCA.py**: Script implementing PCA for dimensionality reduction, which will be used for KMeans
+     - **/Preprocessing/PCA.py**: Script implementing PCA for dimensionality reduction
      - **/Preprocessing/cleaning.py**: Script for cleaning missing values from the dataset
 - **/SupervisedLearning/**: Implementation of supervised learning algorithms.
      - **/SupervisedLearning/randomforest.py**: Script implementing the random forest model using provided dataset
      - **/SupervisedLearning/randomforest.ipynb**: Jupyter notebook containing code for random forest model and visualizations and quantitative metrics representing model output
+     - **/SupervisedLearning/KNN_Jupyter.ipynb**: Jupyter notebook containing code for implemented K-Nearest Neighbors model, visualizations and plotting, and quantitative metrics representing model output
+     - **/SupervisedLearning/NN_modified.ipynb**: Jupyter notebook containing code for implemented Neural Network model, visualizations and plotting, and quantitative metrics representing model output
 - **/index.md**: GitHub Page detailing all progress of the project in the form of a report
 
 ## Getting Started
